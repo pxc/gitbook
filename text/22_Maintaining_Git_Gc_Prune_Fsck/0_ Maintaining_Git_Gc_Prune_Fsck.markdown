@@ -2,7 +2,7 @@
 
 ### Ensuring good performance ###
 
-On large repositories, git depends on compression to keep the history
+On large repositories, Git depends on compression to keep the history
 information from taking up too much space on disk or in memory.
 
 This compression is not performed automatically.  Therefore you
@@ -11,7 +11,7 @@ should occasionally run linkgit:git-gc[1]:
     $ git gc
 
 to recompress the archive.  This can be very time-consuming, so
-you may prefer to run git-gc when you are not doing other work.
+you may prefer to run `git-gc` when you are not doing other work.
 
 
 ### Ensuring reliability ###

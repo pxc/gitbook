@@ -6,7 +6,7 @@ to as a 'treeish'.
 
 ### Partial SHA ###
 
-If your commit SHA is '<code>980e3ccdaac54a0d4de358f3fe5d718027d96aae</code>', git will 
+If your commit SHA is `980e3ccdaac54a0d4de358f3fe5d718027d96aae`, Git will 
 recognize any of the following identically:
 
 	980e3ccdaac54a0d4de358f3fe5d718027d96aae
@@ -14,7 +14,7 @@ recognize any of the following identically:
 	980e3cc
 
 As long as the partial SHA is unique - it can't be confused with another
-(which is incredibly unlikely if you use at least 5 characters), git will
+(which is incredibly unlikely if you use at least 5 characters), Git will
 expand a partial SHA for you.
 
 ### Branch, Remote or Tag Name ###
@@ -40,7 +40,7 @@ Which means the following will give you identical output:
 	
 ### Date Spec ###
 
-The Ref Log that git keeps will allow you to do some relative stuff locally, 
+The Ref Log that Git keeps will allow you to do some relative stuff locally, 
 such as: 
 
 	master@{yesterday}
@@ -88,7 +88,7 @@ You can keep doing this, too.  The following specs will point to the same commit
 ### Tree Pointer ###
 
 This disambiguates a commit from the tree that it points to.  If you want the 
-SHA that a commit points to, you can add the '^{tree}' spec to the end of it.
+SHA that a commit points to, you can add the `^{tree}` spec to the end of it.
 
 	master^{tree}
 

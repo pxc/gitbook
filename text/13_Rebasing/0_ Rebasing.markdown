@@ -1,7 +1,7 @@
 ## Rebasing ##
 
-Suppose that you create a branch "mywork" on a remote-tracking branch
-"origin".
+Suppose that you create a branch `mywork` on a remote-tracking branch
+`origin`.
 
     $ git checkout -b mywork origin
 
@@ -16,7 +16,7 @@ Now you do some work, creating two new commits.
     ...
     
 Meanwhile, someone else does some work, creating two new commits on
-the origin branch too. This means both 'origin' and 'mywork' has
+the origin branch too. This means both `origin` and `mywork` have
 advanced, which means the work has diverged.
 
 [fig:rebase1]
@@ -34,7 +34,7 @@ linkgit:git-rebase[1]:
     $ git rebase origin
 
 This will remove each of your commits from mywork, temporarily saving
-them as patches (in a directory named ".git/rebase"), update mywork to
+them as patches (in a directory named `.git/rebase`), update mywork to
 point at the latest version of origin, then apply each of the saved
 patches to the new mywork.  
 
@@ -53,17 +53,16 @@ and running a rebase:
 
 In the process of the rebase, it may discover conflicts.  In that case
 it will stop and allow you to fix the conflicts; after fixing
-conflicts, use "git-add" to update the index with those contents, and
-then, instead of running git-commit, just run
+conflicts, use `git-add` to update the index with those contents, and
+then, instead of running `git-commit`, just run
 
     $ git rebase --continue
 
-and git will continue applying the rest of the patches.
+and Git will continue applying the rest of the patches.
 
 At any point you may use the `--abort` option to abort this process and
 return mywork to the state it had before you started the rebase:
 
     $ git rebase --abort
-
 
 [gitcast:c7-rebase]("GitCast #7: Rebasing")

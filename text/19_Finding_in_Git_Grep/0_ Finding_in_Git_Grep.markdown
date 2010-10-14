@@ -2,11 +2,11 @@
 
 Finding files with words or phrases in Git is really easy with the 
 linkgit:git-grep[1] command.  It is possible to do this with the normal
-unix 'grep' command, but with 'git grep' you can also search through
+unix `grep` command, but with `git grep` you can also search through
 previous versions of the project without having to check them out.
 
-For example, if you wanted to see every place that used the 'xmmap' call in
-your git.git repository, you could run this:
+For example, if you wanted to see every place that used the `xmmap` call in
+your Git repository, you could run this:
 
 	$ git grep xmmap
 	config.c:               contents = xmmap(NULL, contents_sz, PROT_READ,
@@ -21,7 +21,7 @@ your git.git repository, you could run this:
 	sha1_file.c:            buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0);
 	wrapper.c:void *xmmap(void *start, size_t length,
 
-If you wanted to see the line number of each match as well, you could add the '-n'
+If you wanted to see the line number of each match as well, you could add the `-n`
 option:
 
 	$>git grep -n xmmap
@@ -37,7 +37,7 @@ option:
 	sha1_file.c:2393:               buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd
 	wrapper.c:89:void *xmmap(void *start, size_t length,
 
-If you're only interested in the filename, you can pass the '--name-only' option:
+If you're only interested in the filename, you can pass the `--name-only` option:
 
 	$>git grep --name-only xmmap
 	config.c
@@ -48,7 +48,7 @@ If you're only interested in the filename, you can pass the '--name-only' option
 	sha1_file.c
 	wrapper.c
 
-You could also see how many line matches you have in each file with the '-c' 
+You could also see how many line matches you have in each file with the `-c` 
 option:
 
 	$>git grep -c xmmap
@@ -60,7 +60,7 @@ option:
 	sha1_file.c:5
 	wrapper.c:1
 
-Now, if you wanted to see where that was used in a specific version of git, you 
+Now, if you wanted to see where that was used in a specific version of Git, you 
 could add the tag reference to the end, like this:
 
 	$ git grep xmmap v1.5.0
@@ -76,11 +76,11 @@ could add the tag reference to the end, like this:
 	v1.5.0:sha1_file.c:             buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd
 
 You can see that there are some differences between the current lines and these
-lines in version 1.5.0, one of which is that xmmap is now used in wrapper.c where
+lines in version 1.5.0, one of which is that `xmmap` is now used in `wrapper.c` where
 it was not back in v1.5.0.
 
-You can also combine search terms in grep.  Say you wanted to search for where
-SORT_DIRENT is defined in your repository:
+You can also combine search terms in `grep`.  Say you wanted to search for where
+`SORT_DIRENT` is defined in your repository:
 
 	$ git grep -e '#define' --and -e SORT_DIRENT
 	builtin-fsck.c:#define SORT_DIRENT 0
@@ -103,7 +103,7 @@ each line that has *either* of the terms in those files:
 
 You can also search for lines that have one term and either of two other terms;
 for example, if you wanted to see where you defined constants that had either
-PATH or MAX in the name:
+_PATH_ or _MAX_ in the name:
 
 	$ git grep -e '#define' --and \( -e PATH -e MAX \) 
 	abspath.c:#define MAXDEPTH 5

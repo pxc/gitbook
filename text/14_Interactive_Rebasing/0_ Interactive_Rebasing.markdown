@@ -7,8 +7,8 @@ can also use it to clean up commits you've pulled from someone when
 applying them locally.
 
 If you have a number of commits that you would like to somehow modify
-during the rebase, you can invoke interactive mode by passing a '-i' or
-'--interactive' to the 'git rebase' command.
+during the rebase, you can invoke interactive mode by passing a `-i` or
+`--interactive` to the `git rebase` command.
 
 	$ git rebase -i origin/master
 	
@@ -19,7 +19,7 @@ To see what commits those are beforehand, you can run log this way:
 	
 	$ git log github/master..
 	
-Once you run the 'rebase -i' command, you will be thrown into your editor
+Once you run the `rebase -i` command, you will be thrown into your editor
 of choice with something that looks like this:
 
 	pick fc62e55 added file_size
@@ -47,7 +47,7 @@ gives you one line per commit with the following format:
 Now, you can change the action (which is by default 'pick') to either 'edit'
 or 'squash', or just leave it as 'pick'.  You can also reorder the commits
 just by moving the lines around however you want.  Then, when you exit the 
-editor, git will try to apply the commits however they are now arranged and
+editor, Git will try to apply the commits however they are now arranged and
 do the action specified. 
 
 If 'pick' is specified, Git will simply try to apply the patch and save the 

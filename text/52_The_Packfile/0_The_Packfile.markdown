@@ -43,7 +43,7 @@ a pack.  The packfile format is used in upload-pack and receieve-pack programs
 
 The packfile itself is a very simple format.  There is a header, a series of
 packed objects (each with its own header and body) and then a checksum trailer.
-The first four bytes is the string 'PACK', which is used to make sure 
+The first four bytes form the string 'PACK', which is used to make sure 
 you're getting the start of the packfile correctly.  This is followed by a 4-byte
 packfile version number and then a 4-byte number of entries in that file.  In
 Ruby, you might read the header data like this:
@@ -87,12 +87,12 @@ expanded*. This is why the offsets in the packfile index are so useful,
 otherwise you have to expand every object just to tell when the next header 
 starts.
 
-The data part is just a zlib stream for non-delta object types; for the two
+The data part is just a `zlib` stream for non-delta object types; for the two
 delta object representations, the data portion contains something that
 identifies which base object this delta representation depends on, and the
-delta to apply on the base object to resurrect this object.  <code>ref-delta</code>
+delta to apply on the base object to resurrect this object.  `ref-delta`
 uses a 20-byte hash of the base object at the beginning of data, while
-<code>ofs-delta</code> stores an offset within the same packfile to identify the base
+`ofs-delta` stores an offset within the same packfile to identify the base
 object.  In either case, there are two important constraints a reimplementor must
 adhere to:
 

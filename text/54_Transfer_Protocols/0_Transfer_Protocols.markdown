@@ -8,7 +8,7 @@ transfer Git data around.
 Fetching over an http/s URL will make Git use a slightly dumber protocol.
 In this case, all of the logic is entirely on the client side.  The server
 requires no special setup - any static webserver will work fine if the
-git directory you are fetching from is in the webserver path.
+Git directory you are fetching from is in the webserver path.
 
 In order for this to work, you do need to run a single command on the 
 server repo everytime anything is updated, though - linkgit:git-update-server-info[0],
@@ -75,17 +75,17 @@ Now in this case, the commit that comes back looks like this:
 
 	added chapters on the packfile and how git stores objects
 	
-and we can see that the parent, <code>ab04d88</code> is where our master branch
+and we can see that the parent, `ab04d88` is where our master branch
 is currently pointing.  So, we recursively fetch this tree and then stop, since
 we know we have everything before this point.  You can force Git to double check
-that we have everything with the '--recover' option.  See linkgit:git-http-fetch[1]
+that we have everything with the `--recover` option.  See linkgit:git-http-fetch[1]
 for more information.
 
 If one of the loose object fetches fails, Git will download the packfile indexes
 looking for the sha that it needs, then download that packfile. 
 
-It is important if you are running a git server that serves repos this way to
-implement a post-receive hook that runs the 'git update-server-info' command
+It is important if you are running a Git server that serves repos this way to
+implement a post-receive hook that runs the `git update-server-info` command
 each time or there will be confusion.	
 
 ### Fetching Data with Upload Pack ###
@@ -117,7 +117,7 @@ length and trailing newline if present). Following are the command and
 arguments. This is followed by a null byte and then the host information. The
 request is terminated by a null byte.
 
-The request is processed and turned into a call to git-upload-pack:
+The request is processed and turned into a call to `git-upload-pack`:
 
  	$ git-upload-pack /path/to/repos/project.git
 
@@ -143,7 +143,7 @@ request:
 	0032want 74730d410fcb6603ace96f1dc55ea6196122532d
 	00000009done
 
-This is sent to the open git-upload-pack process which then streams out the 
+This is sent to the open `git-upload-pack` process which then streams out the 
 final response:
 
 	"0008NAK\n"
@@ -170,18 +170,18 @@ in the response.
 	
 ### Pushing Data ###
 
-Pushing data over the git and ssh protocols is similar, but simpler.  Basically
-what happens is the client requests a receive-pack instance, which is started
-up if the client has access, then the server returns all the ref head SHAs it
-has again and the client generates a packfile of everything the server needs
-(generally only if what is on the server is a direct ancestor of what it is
-pushing) and sends that packfile upstream, where the server either stores it
+Pushing data over the git:// and ssh:// protocols is similar, but simpler.
+Basically what happens is the client requests a receive-pack instance, which is
+started up if the client has access, then the server returns all the ref head
+SHAs it has again and the client generates a packfile of everything the server
+needs (generally only if what is on the server is a direct ancestor of what it
+is pushing) and sends that packfile upstream, where the server either stores it
 on disk and builds an index for it, or unpacks it (if there aren't many objects
 in it).
 
 This entire process is accomplished through the linkgit:git-send-pack[1] command
 on the client, which is invoked by linkgit:git-push[1] and the 
 linkgit:git-receive-pack[1] command on the server side, which is invoked by 
-the ssh connect process or git daemon (if it's an open push server).
+the SSH connect process or Git daemon (if it's an open push server).
 
 

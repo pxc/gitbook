@@ -2,7 +2,7 @@
 
 ### The Git Directory ###
 
-The 'git directory' is the directory that stores all Git's history and meta
+The Git directory is the directory that stores all Git's history and meta
 information for your project - including all of the objects (commits, trees,
 blobs, tags), all of the pointers to where different branches are and more.
 
@@ -26,7 +26,7 @@ contents of that directory, you can see all of your important files:
 
 ### The Working Directory ###
 
-The Git 'working directory' is the directory that holds the current checkout 
+The Git working directory is the directory that holds the current checkout 
 of the files you are working on.  Files in this directory are often removed
 or replaced by Git as you switch branches - this is normal.  All your history 
 is stored in the Git directory; the working directory is simply a temporary 

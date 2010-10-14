@@ -10,13 +10,13 @@ directory.
 In order to get a copy of a project, you will need to know the project's Git
 URL - the location of the repository. Git can operate over many different
 protocols, so it may begin with ssh://, http(s)://, git://, or just a username
-(in which case git will assume ssh). Some repositories may be accessed over
+(in which case Git will assume ssh://). Some repositories may be accessed over
 more than one protocol. For example, the source code to Git itself can be
 cloned either over the git:// protocol:
 
     git clone git://git.kernel.org/pub/scm/git/git.git
 
-or over http:
+or over HTTP:
 
     git clone http://www.kernel.org/pub/scm/git/git.git
 
@@ -35,7 +35,7 @@ a new directory named 'linux-2.6').
 ### Initializing a New Repository ###
 
 Assume you have a tarball named project.tar.gz with your initial work. You can
-place it under git revision control as follows:
+place it under Git revision control as follows:
 
     $ tar xzf project.tar.gz
     $ cd project

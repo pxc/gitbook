@@ -1,7 +1,7 @@
 ## Finding Issues - Git Blame ##
 
 The linkgit:git-blame[1] command is really helpful for figuring out who changed
-which sections of a file.  If you simply run 'git blame [filename]' you'll get
+which sections of a file.  If you simply run `git blame [filename]` you'll get
 an output of the entire file with the last commit SHA, date and author for every
 line in the file.
 

@@ -1,6 +1,6 @@
 ## Browsing Git Objects ##
 
-We can ask git about particular objects with the cat-file
+We can ask Git about particular objects with the `cat-file`
 command. Note that you can shorten the SHAs to only a few
 characters to save yourself typing all 40 hex digits:
 
@@ -13,10 +13,10 @@ characters to save yourself typing all 40 hex digits:
 
     initial commit
 
-A tree can refer to one or more "blob" objects, each corresponding to
+A tree can refer to one or more _blob_ objects, each corresponding to
 a file.  In addition, a tree can refer to other tree objects,
 thus creating a directory hierarchy.  You can examine the contents of
-any tree using ls-tree (remember that a long enough initial portion
+any tree using `ls-tree` (remember that a long enough initial portion
 of the SHA1 will also work):
 
     $ git ls-tree 92b8b694
@@ -28,16 +28,16 @@ reference to that file's data:
     $ git cat-file -t 3b18e512
     blob
 
-A "blob" is just file data, which we can also examine with cat-file:
+A blob is just file data, which we can also examine with `cat-file`:
 
     $ git cat-file blob 3b18e512
     hello world
 
-Note that this is the old file data; so the object that git named in
+Note that this is the old file data; so the object that Git named in
 its response to the initial tree was a tree with a snapshot of the
 directory state that was recorded by the first commit.
 
-All of these objects are stored under their SHA1 names inside the git
+All of these objects are stored under their SHA1 names inside the Git
 directory:
 
     $ find .git/objects/
@@ -62,15 +62,15 @@ header identifying its length and its type.  The type is either a
 blob, a tree, a commit, or a tag.
 
 The simplest commit to find is the HEAD commit, which we can find
-from .git/HEAD:
+from `.git/HEAD`:
 
     $ cat .git/HEAD
     ref: refs/heads/master
 
 As you can see, this tells us which branch we're currently on, and it
-tells us this by naming a file under the .git directory, which itself
+tells us this by naming a file under the `.git` directory, which itself
 contains a SHA1 name referring to a commit object, which we can
-examine with cat-file:
+examine with `cat-file`:
 
     $ cat .git/refs/heads/master
     c4d59f390b9cfd4318117afde11d601c1085f241
@@ -84,14 +84,14 @@ examine with cat-file:
 
     add emphasis
 
-The "tree" object here refers to the new state of the tree:
+The _tree_ object here refers to the new state of the tree:
 
     $ git ls-tree d0492b36
     100644 blob a0423896973644771497bdc03eb99d5281615b51    file.txt
     $ git cat-file blob a0423896
     hello world!
 
-and the "parent" object refers to the previous commit:
+and the _parent_ object refers to the previous commit:
 
     $ git-cat-file commit 54196cc2
     tree 92b8b694ffb1675e5975148e1121810081dbdffe

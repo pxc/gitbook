@@ -1,6 +1,6 @@
 ## The Git Index ##
 
-The index is a binary file (generally kept in .git/index) containing a
+The index is a binary file (generally kept in `.git/index`) containing a
 sorted list of path names, each with permissions and the SHA1 of a blob
 object; linkgit:git-ls-files[1] can show you the contents of the index:
 
@@ -33,7 +33,7 @@ properties:
     the last modified time).  This data is not displayed above, and is not
     stored in the created tree object, but it can be used to determine
     quickly which files in the working directory differ from what was
-    stored in the index, and thus save git from having to read all of the
+    stored in the index, and thus save Git from having to read all of the
     data from such files to look for changes.
 
 3. It can efficiently represent information about merge conflicts
@@ -42,7 +42,7 @@ properties:
     you can create a three-way merge between them.
 
     During a merge, the index can
-    store multiple versions of a single file (called "stages").  The third
+    store multiple versions of a single file (called _stages_).  The third
     column in the linkgit:git-ls-files[1] output above is the stage
     number, and will take on values other than 0 for files with merge
     conflicts.

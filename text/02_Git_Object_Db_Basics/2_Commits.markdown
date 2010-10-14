@@ -41,7 +41,7 @@ As you can see, a commit is defined by:
 Note that a commit does not itself contain any information about what
 actually changed; all changes are calculated by comparing the contents
 of the tree referred to by this commit with the trees associated with
-its parents.  In particular, git does not attempt to record file renames
+its parents.  In particular, Git does not attempt to record file renames
 explicitly, though it can identify cases where the existence of the same
 file data at changing paths suggests a rename.  (See, for example, the
 -M option to linkgit:git-diff[1].)

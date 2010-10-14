@@ -37,7 +37,7 @@ first, that match the arguments given to the log command.
 	    bash completion: 'git apply' should use 'fix' not 'strip'
 	    Bring completion up to date with the man page.
    
-You can also ask git log to show patches:
+You can also ask `git log` to show patches:
 
     $ git log -p
 
@@ -63,7 +63,7 @@ You can also ask git log to show patches:
 
 ### Log Stats ###
 
-If you pass the <code>--stat</code> option to 'git log', it will show you
+If you pass the `--stat` option to `git log`, it will show you
 which files have changed in that commit and how many lines were added and 
 removed from each.
 
@@ -82,8 +82,8 @@ removed from each.
 
 ### Formatting the Log ###
 
-You can also format the log output almost however you want.  The '--pretty'
-option can take a number of preset formats, such as 'oneline':
+You can also format the log output almost however you want.  The `--pretty`
+option can take a number of preset formats, such as `oneline`:
 
 	$ git log --pretty=oneline
 	a6b444f570558a5f31ab508dc2a24dc34773825f dammit, this is the second time this has reverted
@@ -93,7 +93,7 @@ option can take a number of preset formats, such as 'oneline':
 	0f87b4d9020fff756c18323106b3fd4e2f422135 merged recent changes: * accepts relative alt pat
 	f0ce7d5979dfb0f415799d086e14a8d2f9653300 updated the Manifest file
 
-or you can do 'short' format:
+or you can do `short` format:
 
 	$ git log --pretty=short
 	commit a6b444f570558a5f31ab508dc2a24dc34773825f
@@ -111,9 +111,9 @@ or you can do 'short' format:
 
 	    Add diff-lcs dependency
 
-You can also use 'medium', 'full', 'fuller', 'email' or 'raw'.  If those formats
+You can also use `medium`, `full`, `fuller`, `email` or `raw`.  If those formats
 aren't exactly what you need, you can also create your own format with the
-'--pretty=format' option (see the linkgit:git-log[1] docs for all the formatting options).
+`--pretty=format` option (see the linkgit:git-log[1] docs for all the formatting options).
 
 	$ git log --pretty=format:'%h was %an, %ar, message: %s'
 	a6b444f was Scott Chacon, 5 days ago, message: dammit, this is the second time this has re
@@ -123,7 +123,7 @@ aren't exactly what you need, you can also create your own format with the
 	0f87b4d was Scott Chacon, 12 days ago, message: merged recent changes:
 	
 Another interesting thing you can do is visualize the commit graph with the
-'--graph' option, like so:
+`--graph` option, like so:
 
 	$ git log --pretty=format:'%h : %s' --graph
 	* 2d3acf9 : ignore errors from SIGCHLD on trap
@@ -142,19 +142,19 @@ It will give a pretty nice ASCII representation of the commit history lines.
 ### Ordering the Log ###
 
 You can also view the log entries in a few different orders. 
-Note that 'git log' starts with the most recent commit and works
-backwards through the parents; however, since git history can contain
+Note that `git log` starts with the most recent commit and works
+backwards through the parents; however, since Git history can contain
 multiple independent lines of development, the particular order that
 commits are listed in may be somewhat arbitrary.
 
 If you want to specify a certain order, you can add an ordering option
-to the 'git log' command.
+to the `git log` command.
 
 By default, the commits are shown in reverse chronological order.
 
 However, you can also specify '--topo-order', which makes the commits
 appear in topological order (i.e. descendant commits are shown before their parents).
-If we view the git log for the Grit repo in topo-order, you can see that the
+If we view the Git log for the Grit repo in topo-order, you can see that the
 development lines are all grouped together.
 
 	$ git log --pretty=format:'%h : %s' --topo-order --graph
@@ -186,8 +186,8 @@ development lines are all grouped together.
 	| | | * | 0a7d387 : Removed debug print.
 	| | | * | 4d6b69c : Fixed to close opened file description.
 
-You can also use '--date-order', which orders the commits primarily by
-commit date.  This option is similar to --topo-order in the sense that
+You can also use `--date-order`, which orders the commits primarily by
+commit date.  This option is similar to `--topo-order` in the sense that
 no parent comes before all of its children, but otherwise things are
 still ordered in the commit timestamp order. You can see that
 development lines are not grouped together here: they jump around as
@@ -222,6 +222,6 @@ parallel development occurred:
 	| * | | a0e4a3d : updated grit gemspec
 	| * | | 7569d0d : including code from github updates
 
-Lastly, you can reverse the order of the log with the '--reverse' option.
+Lastly, you can reverse the order of the log with the `--reverse` option.
 
 [gitcast:c4-git-log]("GitCast #4: Git Log")

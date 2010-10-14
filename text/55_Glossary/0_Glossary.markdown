@@ -33,7 +33,7 @@ _branch_
     commit on a branch is referred to as the tip of
     that branch.  The tip of the branch is referenced by a branch
     head, which moves forward as additional development
-    is done on the branch.  A single git
+    is done on the branch.  A single Git
     repository can track an arbitrary number of
     branches, but your working tree is
     associated with just one of them (the "current" or "checked out"
@@ -51,9 +51,9 @@ _chain_
 
 _changeset_
 
->   BitKeeper/cvsps speak for "commit". Since git does not
+>   BitKeeper/cvsps speak for "commit". Since Git does not
     store changes, but states, it really does not make sense to use the term
-    "changesets" with git.
+    "changesets" with Git.
 
 _checkout_
 
@@ -69,7 +69,7 @@ _cherry-picking_
 >   In SCM jargon, "cherry pick" means to choose a subset of
     changes out of a series of changes (typically commits) and record them
     as a new series of changes on top of a different codebase. In GIT, this is
-    performed by the "git cherry-pick" command to extract the change introduced
+    performed by the `git cherry-pick` command to extract the change introduced
     by an existing commit and to record it based on the tip
     of the current branch as a new commit.
 
@@ -82,14 +82,14 @@ _clean_
 _commit_
 
 >   As a noun: A single point in the
-    git history; the entire history of a project is represented as a
+    Git history; the entire history of a project is represented as a
     set of interrelated commits.  The word "commit" is often
-    used by git in the same places other revision control systems
+    used by Git in the same places other revision control systems
     use the words "revision" or "version".  Also used as a short
     hand for commit object.
 
 >   As a verb: The action of storing a new snapshot of the project's
-    state in the git history, by creating a new commit representing the current
+    state in the Git history, by creating a new commit representing the current
     state of the index and advancing HEAD
     to point at the new commit.
 
@@ -103,7 +103,7 @@ _commit object_
 
 _core git_
 
->   Fundamental data structures and utilities of git. Exposes only limited
+>   Fundamental data structures and utilities of Git. Exposes only limited
     source code management tools.
 
 _DAG_
@@ -123,7 +123,7 @@ _dangling object_
 _detached HEAD_
 
 >   Normally the HEAD stores the name of a
-    branch.  However, git also allows you to check out
+    branch.  However, Git also allows you to check out
     an arbitrary commit that isn't necessarily the tip of any
     particular branch.  In this case HEAD is said to be "detached".
 
@@ -133,7 +133,7 @@ _dircache_
 
 _directory_
 
->   The list you get with "ls" :-)
+>   The list you get with `ls` :-)
 
 _dirty_
 
@@ -173,9 +173,9 @@ _fetch_
 
 _file system_
 
->   Linus Torvalds originally designed git to be a user space file system,
+>   Linus Torvalds originally designed Git to be a user space file system,
     i.e. the infrastructure to hold files and directories. That ensured the
-    efficiency and speed of git.
+    efficiency and speed of Git.
 
 _git archive_
 
@@ -185,13 +185,13 @@ _grafts_
 
 >   Grafts enables two otherwise different lines of development to be joined
     together by recording fake ancestry information for commits. This way
-    you can make git pretend the set of parents a commit has
+    you can make Git pretend the set of parents a commit has
     is different from what was recorded when the commit was
     created. Configured via the `.git/info/grafts` file.
 
 _hash_
 
->   In git's context, synonym to object name.
+>   In Git's context, synonym to object name.
 
 _head_
 
@@ -213,14 +213,14 @@ _head ref_
 
 _hook_
 
->   During the normal execution of several git commands, call-outs are made
+>   During the normal execution of several Git commands, call-outs are made
     to optional scripts that allow a developer to add functionality or
     checking. Typically, the hooks allow for a command to be pre-verified
     and potentially aborted, and allow for a post-notification after the
     operation is done. The hook scripts are found in the
     `$GIT_DIR/hooks/` directory, and are enabled by simply
     removing the `.sample` suffix from the filename. In earlier versions
-    of git you had to make them executable.
+    of Git you had to make them executable.
 
 _index_
 
@@ -240,7 +240,7 @@ _index entry_
 _master_
 
 >   The default development branch. Whenever you
-    create a git repository, a branch named
+    create a Git repository, a branch named
     "master" is created, and becomes the active branch. In most
     cases, this contains the local development, though that is
     purely by convention and is not required.
@@ -269,7 +269,7 @@ _merge_
 
 _object_
 
->   The unit of storage in git. It is uniquely identified by the
+>   The unit of storage in Git. It is uniquely identified by the
     SHA1> of its contents. Consequently, an
     object can not be changed.
 
@@ -307,7 +307,7 @@ _origin_
     'origin' is used for that purpose. New upstream updates
     will be fetched into remote tracking branches named
     origin/name-of-upstream-branch, which you can see using
-    "`git branch -r`".
+    `git branch -r`.
 
 _pack_
 
@@ -444,7 +444,7 @@ _shallow repository_
 
 >   A shallow repository has an incomplete
     history some of whose commits have parents cauterized away (in other
-    words, git is told to pretend that these commits do not have the
+    words, Git is told to pretend that these commits do not have the
     parents, even though they are recorded in the commit
     object). This is sometimes useful when you are interested only in the
     recent history of a project even though the real history recorded in the
@@ -467,8 +467,8 @@ _tag_
     commit object. In contrast to a head,
     a tag is not changed by a commit. Tags (not
     tag objects) are stored in `$GIT_DIR/refs/tags/`. A
-    git tag has nothing to do with a Lisp tag (which would be
-    called an object type in git's context). A
+    Git tag has nothing to do with a Lisp tag (which would be
+    called an object type in Git's context). A
     tag is most typically used to mark a particular point in the
     commit ancestry chain.
 
@@ -481,7 +481,7 @@ _tag object_
 
 _topic branch_
 
->   A regular git branch that is used by a developer to
+>   A regular Git branch that is used by a developer to
     identify a conceptual line of development. Since branches are very easy
     and inexpensive, it is often desirable to have several small branches
     that each contain very well defined concepts or small incremental yet
@@ -489,7 +489,7 @@ _topic branch_
 
 _tracking branch_
 
->   A regular git branch that is used to follow changes from
+>   A regular Git branch that is used to follow changes from
     another repository. A tracking
     branch should not contain direct modifications or have local commits
     made to it. A tracking branch can usually be

@@ -15,8 +15,8 @@ and possibly sign it cryptographically, then you can create a *tag object* inste
 
 ### Tag Objects ###
 
-If one of **-a**, **-s**, or **-u <key-id>** is passed, the command creates a tag object, 
-and requires the tag message. Unless -m <msg> or -F <file> is given, an editor 
+If one of `-a`, `-s`, or `-u <key-id>` is passed, the command creates a tag object, 
+and requires the tag message. Unless `-m <msg>` or `-F <file>` is given, an editor 
 is started for the user to type in the tag message.
 
 When this happens, a new object is added to the Git object database and the 
@@ -33,7 +33,7 @@ references a tree rather than a commit.)
 ### Signed Tags ###
 
 If you have a GPG key set up, you can create signed tags fairly easily.  First,
-you will probably want to setup your key ID in your _.git/config_ or _~.gitconfig_
+you will probably want to setup your key ID in your `.git/config` or `~.gitconfig`
 file.
 
     [user]

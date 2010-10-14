@@ -22,7 +22,7 @@ comfortable after you know the basic commands.
 After you have all of that mastered, we will cover **Advanced Git** - commands
 that most people probably don't use very often, but which can be very helpful in
 certain situations.  Learning these commands should round out your day-to-day
-git knowledge; you will be a master of the Git!
+Git knowledge; you will be a master of the Git!
 
 Now that you know Git, we will then cover **Working with Git**.  Here we will go
 over how to use Git in scripts, with deployment tools, with editors and more.

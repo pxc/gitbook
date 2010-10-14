@@ -25,7 +25,7 @@ supported by the recursive merge strategy, so just pulling won't work.
 
 What you want is the subtree merge strategy, which helps you in such a situation.
 
-In this example, let's say you have the repository at /path/to/B 
+In this example, let's say you have the repository at `/path/to/B` 
 (but it can be an URL as well, if you want). You want to merge the master 
 branch of that repository to the dir-B subdirectory in your current branch.
 

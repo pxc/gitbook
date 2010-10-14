@@ -12,7 +12,7 @@ shorthand:
 The full name is occasionally useful if, for example, there ever
 exist a tag and a branch with the same name.
 
-(Newly created refs are actually stored in the .git/refs directory,
+(Newly created refs are actually stored in the `.git/refs` directory,
 under the path given by their name.  However, for efficiency reasons
 they may also be packed together in a single file; see
 linkgit:git-pack-refs[1].)
@@ -21,7 +21,7 @@ As another useful shortcut, the "HEAD" of a repository can be referred
 to just using the name of that repository.  So, for example, "origin"
 is usually a shortcut for the HEAD branch in the repository "origin".
 
-For the complete list of paths which git checks for references, and
+For the complete list of paths which Git checks for references, and
 the order it uses to decide which to choose when there are multiple
 references with the same shorthand name, see the "SPECIFYING
 REVISIONS" section of linkgit:git-rev-parse[1].
@@ -43,7 +43,7 @@ linkgit:git-show-ref[1]:
     1e87486ae06626c2f31eaa63d26fc0fd646c8af2 refs/heads/tutorial-fixes
 
 We can get just the branch-head names, and remove "master", with
-the help of the standard utilities cut and grep:
+the help of the standard utilities `cut` and `grep`:
 
     $ git show-ref --heads | cut -d' ' -f2 | grep -v '^refs/heads/master'
     refs/heads/core-tutorial

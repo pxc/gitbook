@@ -2,7 +2,7 @@
 
 ### Getting conflict-resolution help during a merge ###
 
-All of the changes that git was able to merge automatically are
+All of the changes that Git was able to merge automatically are
 already added to the index file, so linkgit:git-diff[1] shows only
 the conflicts.  It uses an unusual syntax:
 

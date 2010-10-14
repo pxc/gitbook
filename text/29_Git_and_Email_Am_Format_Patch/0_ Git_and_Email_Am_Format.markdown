@@ -31,7 +31,7 @@ single mailbox file, say "patches.mbox", then run
 Git will apply each patch in order; if any conflicts are found, it
 will stop, and you can manually fix the conflicts and
 resolve the merge.  (The "-3" option tells
-git to perform a merge; if you would prefer it just to abort and
+Git to perform a merge; if you would prefer it just to abort and
 leave your tree and index untouched, you may omit that option.)
 
 Once the index is updated with the results of the conflict
@@ -39,7 +39,7 @@ resolution, instead of creating a new commit, just run
 
     $ git am --resolved
 
-and git will create the commit for you and continue applying the
+and Git will create the commit for you and continue applying the
 remaining patches from the mailbox.
 
 The final result will be a series of commits, one for each patch in

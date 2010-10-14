@@ -1,7 +1,7 @@
 ## Interactive Adding ##
 
 Interactive Adding is a really nice way of working with and visualizing
-the Git index.  To start it up, simply type 'git add -i'.  Git will show
+the Git index.  To start it up, simply type `git add -i`.  Git will show
 you all the modified files you have and their status.
 
 	$>git add -i
@@ -55,7 +55,7 @@ can see that the file status has changed:
 
 Now you can see the first four files are staged and the last one is still not.
 This is basically a compressed way to see the same information you see when
-you run 'git status' from the command line:
+you run `git status` from the command line:
 
 	$ git status
 	# On branch master
@@ -78,14 +78,14 @@ adding untracked files (4: add untracked), and viewing diffs (6: diff). Those
 are all pretty straightforward.  However, there is one command that is pretty
 cool here, which is staging patches (5: patch).
 
-If you type '5' or 'p' in the menu, git will show you your diff patch by patch 
+If you type '5' or 'p' in the menu, Git will show you your diff patch by patch 
 (or hunk by hunk) and ask if you want to stage each one.  That way you can 
 actually stage for a commit a part of a file edit.  If you've edited a file
 and want to commit only part of it and not an unfinished part, or commit 
 documentation or whitespace changes separately from substantive changes, you can
-use 'git add -i' to do so relatively easily.
+use `git add -i` to do so relatively easily.
 
-Here I've staged some changes to the book_index_template.html file, but not all
+Here I've staged some changes to the `book_index_template.html` file, but not all
 of them:
 
 	         staged     unstaged path
@@ -96,9 +96,9 @@ of them:
 	5:    unchanged      +121/-0 text/14_Interactive_Rebasing/0_ Interactive_Rebasing.markdown
 	6:    unchanged       +85/-0 text/15_Interactive_Adding/0_ Interactive_Adding.markdown
 
-When you are done making changes to your index through 'git add -i', you simply
-quit (7: quit) and then run 'git commit' to commit the staged changes.  Remember
-**not** to run 'git commit -a', which will blow away all the careful changes 
+When you are done making changes to your index through `git add -i`, you simply
+quit (7: quit) and then run `git commit` to commit the staged changes.  Remember
+**not** to run `git commit -a`, which will blow away all the careful changes 
 you've just made and simply commit everything.
 
 [gitcast:c3_add_interactive]("GitCast #3: Interactive Adding")

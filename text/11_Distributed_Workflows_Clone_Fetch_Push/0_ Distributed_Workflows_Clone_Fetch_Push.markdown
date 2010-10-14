@@ -1,14 +1,14 @@
 ## Distributed Workflows ##
 
-Suppose that Alice has started a new project with a git repository in
-/home/alice/project, and that Bob, who has a home directory on the
+Suppose that Alice has started a new project with a Git repository in
+`/home/alice/project`, and that Bob, who has a home directory on the
 same machine, wants to contribute.
 
 Bob begins with:
 
     $ git clone /home/alice/project myrepo
 
-This creates a new directory "myrepo" containing a clone of Alice's
+This creates a new directory `myrepo` containing a clone of Alice's
 repository.  The clone is on an equal footing with the original
 project, possessing its own copy of the original project's history.
 
@@ -19,28 +19,28 @@ Bob then makes some changes and commits them:
     (repeat as necessary)
 
 When he's ready, he tells Alice to pull changes from the repository
-at /home/bob/myrepo.  She does this with:
+at `/home/bob/myrepo`.  She does this with:
 
     $ cd /home/alice/project
     $ git pull /home/bob/myrepo master
 
-This merges the changes from Bob's "master" branch into Alice's
+This merges the changes from Bob's `master` branch into Alice's
 current branch.  If Alice has made her own changes in the meantime,
 then she may need to manually fix any conflicts.  (Note that the
-"master" argument in the above command is actually unnecessary, as it
+`master` argument in the above command is actually unnecessary, as it
 is the default.)
 
-The "pull" command thus performs two operations: it fetches changes
+The `pull` command thus performs two operations: it fetches changes
 from a remote branch, then merges them into the current branch.
 
 When you are working in a small closely knit group, it is not unusual
 to interact with the same repository over and over again.  By defining
-a 'remote' repository shorthand, you can make it easier:
+a `remote` repository shorthand, you can make it easier:
 
     $ git remote add bob /home/bob/myrepo
 
 With this, Alice can perform the first operation alone using the
-"git fetch" command without merging them with her own branch,
+`git fetch` command without merging them with her own branch,
 using:
 
     $ git fetch bob
@@ -65,7 +65,7 @@ tracking branch', like this:
 
     $ git pull . remotes/bob/master
 
-Note that git pull always merges into the current branch,
+Note that `git pull` always merges into the current branch,
 regardless of what else is given on the command line.
 
 Later, Bob can update his repo with Alice's latest changes using
@@ -73,7 +73,7 @@ Later, Bob can update his repo with Alice's latest changes using
     $ git pull
 
 Note that he doesn't need to give the path to Alice's repository;
-when Bob cloned Alice's repository, git stored the location of her
+when Bob cloned Alice's repository, Git stored the location of her
 repository in the repository configuration, and that location is
 used for pulls:
 
@@ -81,11 +81,11 @@ used for pulls:
     /home/alice/project
 
 (The complete configuration created by git-clone is visible using
-"git config -l", and the linkgit:git-config[1] man page
+`git config -l`, and the linkgit:git-config[1] man page
 explains the meaning of each option.)
 
 Git also keeps a pristine copy of Alice's master branch under the
-name "origin/master":
+name `origin/master`:
 
     $ git branch -r
       origin/master
@@ -95,7 +95,7 @@ perform clones and pulls using the SSH protocol:
 
     $ git clone alice.org:/home/alice/project myrepo
 
-Alternatively, git has a native protocol, or can use rsync or HTTP;
+Alternatively, Git has a native protocol, or can use rsync or HTTP;
 see linkgit:git-pull[1] for details.
 
 Git can also be used in a CVS-like mode, with a central repository
@@ -151,14 +151,14 @@ like this:
 
 ### Pushing changes to a public repository ###
 
-Note that exporting via HTTP or git allows other maintainers to fetch
-your latest changes, but does not allow write access.  For this, you
-will need to update the public repository with the latest changes
-created in your private repository.
+Note that exporting via http:// or git:// allows other maintainers to fetch
+your latest changes, but does not allow write access.  For this, you will need
+to update the public repository with the latest changes created in your private
+repository.
 
 The simplest way to do this is using linkgit:git-push[1] and SSH; to
-update the remote branch named "master" with the latest state of your
-branch named "master", run
+update the remote branch named `master` with the latest state of your
+branch named `master`, run
 
     $ git push ssh://yourserver.com/~you/proj.git master:master
 
@@ -166,9 +166,8 @@ or just
 
     $ git push ssh://yourserver.com/~you/proj.git master
 
-As with git-fetch, git-push will complain if this does not result in a
-fast forward; see the following section for details on handling this
-case.
+As with `git-fetch`, `git-push` will complain if this does not result in a fast
+forward; see the following section for details on handling this case.
 
 Note that the target of a "push" is normally a bare repository.  You
 can also push to a repository that has a checked-out working tree, but
@@ -176,8 +175,8 @@ the working tree will not be updated by the push.  This may lead to
 unexpected results if the branch you push to is the currently
 checked-out branch!
 
-As with git-fetch, you may also set up configuration options to
-save typing; so, for example, after
+As with `git-fetch`, you may also set up configuration options to save typing;
+so, for example, after
 
     $ cat >>.git/config <<EOF
     [remote "public-repo"]
@@ -188,8 +187,8 @@ you should be able to perform the above push with just
 
     $ git push public-repo master
 
-See the explanations of the remote.<name>.url, branch.<name>.remote,
-and remote.<name>.push options in linkgit:git-config[1] for
+See the explanations of the `remote.<name>.url`, `branch.<name>.remote`,
+and `remote.<name>.push` options in linkgit:git-config[1] for
 details.
 
 ### What to do when a push fails ###
@@ -208,7 +207,7 @@ This can happen, for example, if you:
 	- use `git-commit --amend` to replace already-published commits, or
 	- use `git-rebase` to rebase any already-published commits.
 
-You may force git-push to perform the update anyway by preceding the
+You may force `git-push` to perform the update anyway by preceding the
 branch name with a plus sign:
 
     $ git push ssh://yourserver.com/~you/proj.git +master

@@ -1,7 +1,7 @@
 ## Basic Branching and Merging ##
 
-A single git repository can maintain multiple branches of
-development.  To create a new branch named "experimental", use
+A single Git repository can maintain multiple branches of
+development.  To create a new branch named `experimental`, use
 
     $ git branch experimental
 
@@ -14,8 +14,8 @@ you'll get a list of all existing branches:
       experimental
     * master
 
-The "experimental" branch is the one you just created, and the
-"master" branch is a default branch that was created for you
+The `experimental` branch is the one you just created, and the
+`master` branch is a default branch that was created for you
 automatically.  The asterisk marks the branch you are currently on;
 type
 
@@ -65,7 +65,7 @@ At this point you could delete the experimental branch with
 This command ensures that the changes in the experimental branch are
 already in the current branch.
 
-If you develop on a branch crazy-idea, then regret it, you can always
+If you develop on a branch `crazy-idea`, then regret it, you can always
 delete the branch with
 
     $ git branch -D crazy-idea
@@ -80,7 +80,7 @@ linkgit:git-merge[1].
 
     $ git merge branchname
 
-This merges the changes made in the branch "branchname" into the current
+This merges the changes made in the branch `branchname` into the current
 branch.  If there are conflicts--for example, if the same file is
 modified in two different ways in the remote branch and the local
 branch--then you are warned; the output may look something like this:
@@ -93,16 +93,16 @@ branch--then you are warned; the output may look something like this:
 
 Conflict markers are left in the problematic files, and after
 you resolve the conflicts manually, you can update the index
-with the contents and run git commit, as you normally would when
+with the contents and run `git commit`, as you normally would when
 modifying a file.
 
-If you examine the resulting commit using gitk, you will see that it
+If you examine the resulting commit using `gitk`, you will see that it
 has two parents: one pointing to the top of the current branch, and
 one to the top of the other branch.
 
 ### Resolving a merge ###
 
-When a merge isn't resolved automatically, git leaves the index and
+When a merge isn't resolved automatically, Git leaves the index and
 the working tree in a special state that gives you all the
 information you need to help resolve the merge.
 
@@ -132,7 +132,7 @@ some information about the merge.  Normally you can just use this
 default message unchanged, but you may add additional commentary of
 your own if desired.
 
-The above is all you need to know to resolve a simple merge.  But git
+The above is all you need to know to resolve a simple merge.  But Git
 also provides more information to help resolve conflicts:
 
 ### Undoing a merge ###
@@ -158,7 +158,7 @@ the two lines of development that were merged.
 
 However, if the current branch has not diverged from the other--so every
 commit present in the current branch is already contained in the other--then
-git just performs a "fast forward"; the head of the current branch is moved
+Git just performs a "fast forward"; the head of the current branch is moved
 forward to point at the head of the merged-in branch, without any new commits
 being created.
 

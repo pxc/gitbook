@@ -5,8 +5,8 @@ and convert your whole project to Git.  How can you do that easily?
 
 ### Importing Subversion ###
 
-Git comes with a script called git-svn that has a clone command that
-will import a subversion repository into a new git repository.  There
+Git comes with a script called `git-svn` that has a clone command that
+will import a subversion repository into a new Git repository.  There
 is also a free tool on the GitHub service that will do this for you.
 	
 	$ git-svn clone http://my-project.googlecode.com/svn/trunk new-project
@@ -18,7 +18,7 @@ single revision one by one.
 
 ### Importing Perforce ###
 
-In contrib/fast-import you will find the git-p4 script, which is a 
+In `contrib/fast-import` you will find the `git-p4` script, which is a 
 Python script that will import a Perforce repository for you.
 
 	$ ~/git.git/contrib/fast-import/git-p4 clone //depot/project/main@all myproject

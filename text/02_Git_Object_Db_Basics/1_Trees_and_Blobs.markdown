@@ -14,7 +14,7 @@ Assuming we have the SHA for a blob, we can examine its contents like this:
      v2.2 or v3.x or whatever), unless explicitly otherwise stated.
     ...
 
-A "blob" object is nothing but a chunk of binary data.  It doesn't refer
+A _blob_ object is nothing but a chunk of binary data.  It doesn't refer
 to anything else or have attributes of any kind, not even a file name.
 
 Since the blob is entirely defined by its data, if two files in a
@@ -54,12 +54,12 @@ file, or another tree, representing the contents of a subdirectory.  Since
 trees and blobs, like all other objects, are named by the SHA1 hash of their
 contents, two trees have the same SHA1 name if and only if their contents
 (including, recursively, the contents of all subdirectories) are identical.
-This allows git to quickly determine the differences between two related tree
+This allows Git to quickly determine the differences between two related tree
 objects, since it can ignore any entries with identical object names.
 
 (Note: in the presence of submodules, trees may also have commits as
 entries.  See the **Submodules** section.)
 
-Note that the files all have mode 644 or 755: git actually only pays
+Note that the files all have mode 644 or 755: Git actually only pays
 attention to the executable bit.
 

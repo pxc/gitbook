@@ -13,21 +13,21 @@ state with
 
     $ git reset --hard HEAD
 
-This will throw away any changes you may have added to the git index
+This will throw away any changes you may have added to the Git index
 and as well as any outstanding changes you have in your working tree.
-In other words, it causes the results of "git diff" and "git diff --cached"
+In other words, it causes the results of `git diff` and `git diff --cached`
 to both be empty.
 
-If you want to restore just one file, say your hello.rb, use
+If you want to restore just one file, say your `hello.rb`, use
 linkgit:git-checkout[1] instead
 
     $ git checkout -- hello.rb
     $ git checkout HEAD hello.rb
 
-The first command restores hello.rb to the version in the index,
-so that "git diff hello.rb" returns no differences.  The second command
-restores hello.rb to the version in the HEAD revision, so
-that both "git diff hello.rb" and "git diff --cached hello.rb"
+The first command restores `hello.rb` to the version in the index,
+so that `git diff hello.rb` returns no differences.  The second command
+restores `hello.rb` to the version in the HEAD revision, so
+that both `git diff hello.rb` and `git diff --cached hello.rb`
 return no differences.
 
 ### Fixing committed mistakes ###
@@ -41,7 +41,7 @@ fundamentally different ways to fix the problem:
 
 2. You can go back and modify the old commit.  You should
     never do this if you have already made the history public;
-    git does not normally expect the "history" of a project to
+    Git does not normally expect the "history" of a project to
     change, and cannot correctly perform repeated merges from
     a branch that has had its history changed.
 
@@ -60,7 +60,7 @@ You can also revert an earlier change, for example, the next-to-last:
 
     $ git revert HEAD^
 
-In this case git will attempt to undo the old change while leaving
+In this case Git will attempt to undo the old change while leaving
 intact any changes made since then.  If more recent changes overlap
 with the changes to be reverted, then you will be asked to fix
 conflicts manually, just as in the case of resolving a merge.
@@ -69,7 +69,7 @@ conflicts manually, just as in the case of resolving a merge.
 
 If you have just committed something but realize you need to fix
 up that commit, recent versions of linkgit:git-commit[1] support an 
-**--amend** flag which instructs git to replace the HEAD commit
+**--amend** flag which instructs Git to replace the HEAD commit
 with a new one, based on the current contents of the index.  This
 gives you an opportunity to add files that you forgot to add or
 correct typos in a commit message, prior to pushing the change
@@ -77,6 +77,6 @@ out for the world to see.
 
 If you find a mistake in an older commit, but still one that you
 have not yet published to the world, you can use linkgit:git-rebase[1]
-in interactive mode, with "git rebase -i" marking the change
+in interactive mode, with `git rebase -i` marking the change
 that requires correction with **edit**.  This will allow you
 to amend the commit during the rebasing process.

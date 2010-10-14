@@ -13,7 +13,7 @@ packed objects.
 Loose objects are the simpler format.  A loose object is simply the compressed data stored
 in a single file on disk.  Every object is written to a seperate file.
 
-If the SHA of your object is <code>ab04d884140f7b0cf8bbf86d6883869f16a46f65</code>,
+If the SHA of your object is `ab04d884140f7b0cf8bbf86d6883869f16a46f65`,
 then the file will be stored in the following path:
 
 	GIT_DIR/objects/ab/04d884140f7b0cf8bbf86d6883869f16a46f65

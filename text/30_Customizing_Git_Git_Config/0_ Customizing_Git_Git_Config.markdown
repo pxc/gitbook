@@ -35,7 +35,7 @@ See all color.* options in the linkgit:git-config[1] docs
 	$ git config color.interactive auto
 	$ git config color.status auto
 
-Or, you can set all of them on with the color.ui option:
+Or, you can set all of them on with the `color.ui` option:
 
 	$ git config color.ui true
 	
