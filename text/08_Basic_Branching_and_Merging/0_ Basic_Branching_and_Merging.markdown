@@ -36,18 +36,19 @@ You can make a different change on the master branch:
     (edit file)
     $ git commit -a
 
-at this point the two branches have diverged, with different changes
+At this point the two branches have diverged, with different changes
 made in each.  To merge the changes made in experimental into master, run
 
     $ git merge experimental
 
 If the changes don't conflict, you're done.  If there are conflicts,
 markers will be left in the problematic files showing the conflict;
+the command
 
     $ git diff
 
 will show this.  Once you've edited the files to resolve the
-conflicts,
+conflicts, the command
 
     $ git commit -a
 
@@ -75,11 +76,11 @@ out.
 ### How to merge ###
 
 You can rejoin two diverging branches of development using
-linkgit:git-merge[1]:
+linkgit:git-merge[1].
 
     $ git merge branchname
 
-merges the changes made in the branch "branchname" into the current
+This merges the changes made in the branch "branchname" into the current
 branch.  If there are conflicts--for example, if the same file is
 modified in two different ways in the remote branch and the local
 branch--then you are warned; the output may look something like this:
@@ -141,7 +142,7 @@ away, you can always return to the pre-merge state with
 
     $ git reset --hard HEAD
 
-Or, if you've already committed the merge that you want to throw away,
+or, if you've already committed the merge that you want to throw away,
 
     $ git reset --hard ORIG_HEAD
 

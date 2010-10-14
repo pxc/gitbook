@@ -15,9 +15,9 @@ Now you do some work, creating two new commits.
     $ git commit
     ...
     
-Meanwhile, someone else does some work creating two new commits on the origin
-branch too. This means both 'origin' and 'mywork' has advanced, which means 
-the work has diverged.
+Meanwhile, someone else does some work, creating two new commits on
+the origin branch too. This means both 'origin' and 'mywork' has
+advanced, which means the work has diverged.
 
 [fig:rebase1]
 
@@ -26,8 +26,8 @@ the result would create a new merge commit, like this:
 
 [fig:rebase2]
 
-However, if you prefer to keep the history in mywork a simple series of
-commits without any merges, you may instead choose to use
+However, if you prefer to keep the history in mywork as a simple
+series of commits without any merges, you may instead choose to use
 linkgit:git-rebase[1]:
 
     $ git checkout mywork
@@ -42,19 +42,19 @@ patches to the new mywork.
 
 Once the ref ('mywork') is updated to point to the newly created commit 
 objects, your older commits will be abandoned.  They will likely be
-removed if you run a pruning garbage collection. (see linkgit:git-gc[1])
+removed if you run a pruning garbage collection (see linkgit:git-gc[1]).
 
 [fig:rebase4]
 
-So now we can look at the difference in our history between running a merge
+So now you can look at the difference in your history between running a merge
 and running a rebase:
 
 [fig:rebase5]
 
-In the process of the rebase, it may discover conflicts.  In that case it will stop
-and allow you to fix the conflicts; after fixing conflicts, use "git-add"
-to update the index with those contents, and then, instead of
-running git-commit, just run
+In the process of the rebase, it may discover conflicts.  In that case
+it will stop and allow you to fix the conflicts; after fixing
+conflicts, use "git-add" to update the index with those contents, and
+then, instead of running git-commit, just run
 
     $ git rebase --continue
 

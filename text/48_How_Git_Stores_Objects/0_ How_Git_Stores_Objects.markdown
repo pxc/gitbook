@@ -2,7 +2,7 @@
 
 This chapter goes into detail about how Git physically stores objects.
 
-All objects are stored as compressed contents by their sha values.  They
+All objects are stored as compressed contents by their SHA values.  They
 contain the object type, size and contents in a gzipped format.
 
 There are two formats that Git keeps objects in - loose objects and 
@@ -10,15 +10,15 @@ packed objects.
 
 ### Loose Objects ###
 
-Loose objects are the simpler format.  It is simply the compressed data stored
-in a single file on disk.  Every object written to a seperate file.
+Loose objects are the simpler format.  A loose object is simply the compressed data stored
+in a single file on disk.  Every object is written to a seperate file.
 
-If the sha of your object is <code>ab04d884140f7b0cf8bbf86d6883869f16a46f65</code>,
+If the SHA of your object is <code>ab04d884140f7b0cf8bbf86d6883869f16a46f65</code>,
 then the file will be stored in the following path:
 
 	GIT_DIR/objects/ab/04d884140f7b0cf8bbf86d6883869f16a46f65
 
-It pulls the first two characters off and uses that as the subdirectory, so that
+Git pulls the first two characters off and uses that as the subdirectory, so that
 there are never too many objects in one directory.  The actual file name is 
 the remaining 38 characters.
 
@@ -51,7 +51,7 @@ implementation of object storage:
 The other format for object storage is the packfile. Since Git stores each 
 version of each file as a seperate object, it can get pretty inefficient. 
 Imagine having a file several thousand lines long and changing a single line.
-Git will store the second file in it's entirety, which is a great big waste
+Git will store the second file in its entirety, which is a great big waste
 of space.
 
 In order to save that space, Git utilizes the packfile.  This is a format
@@ -67,9 +67,9 @@ analysis.  There can be multiple packfiles, they can be repacked if neccesary
 (linkgit:git-repack[1]) or unpacked back into loose files 
 (linkgit:git-unpack-objects[1]) relatively easily. 
 
-Git will also write out an index file for each packfile that is much smaller 
+For each packfile, Git will also write out an index file, which is much smaller 
 and contains offsets into the packfile to more quickly find specific objects 
-by sha.
+by SHA.
 
 The actual details of the packfile implementation are found in the Packfile
 chapter a little later on.

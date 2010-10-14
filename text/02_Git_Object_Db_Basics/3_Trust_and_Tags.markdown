@@ -1,4 +1,3 @@
-
 ### Tag Object ###
 
 [fig:object-tag]
@@ -26,4 +25,4 @@ linkgit:git-cat-file[1]:
 See the linkgit:git-tag[1] command to learn how to create and verify tag
 objects.  (Note that linkgit:git-tag[1] can also be used to create
 "lightweight tags", which are not tag objects at all, but just simple
-references whose names begin with "refs/tags/").
+references whose names begin with "refs/tags/".)

@@ -42,7 +42,7 @@ The benefit of using subtree merge is that it requires less administrative
 burden from the users of your repository. It works with older 
 (before Git v1.5.2) clients and you have the code right after clone.
 
-However if you use submodules then you can choose not to transfer the 
+However, if you use submodules then you can choose not to transfer the 
 submodule objects. This may be a problem with the subtree merge.
 
 Also, in case you make changes to the other project, it is easier to 

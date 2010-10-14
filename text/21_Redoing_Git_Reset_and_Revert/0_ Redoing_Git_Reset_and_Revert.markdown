@@ -2,7 +2,7 @@
 
 Git provides multiple methods for fixing up mistakes as you
 are developing.  Selecting an appropriate method depends on whether
-or not you have committed the mistake, and if you have committed the
+or not you have committed the mistake and, if you have committed the
 mistake, whether you have shared the erroneous commit with anyone else.
 
 ### Fixing un-committed mistakes ###
@@ -18,7 +18,7 @@ and as well as any outstanding changes you have in your working tree.
 In other words, it causes the results of "git diff" and "git diff --cached"
 to both be empty.
 
-If you just want to restore just one file, say your hello.rb, use
+If you want to restore just one file, say your hello.rb, use
 linkgit:git-checkout[1] instead
 
     $ git checkout -- hello.rb
@@ -26,7 +26,7 @@ linkgit:git-checkout[1] instead
 
 The first command restores hello.rb to the version in the index,
 so that "git diff hello.rb" returns no differences.  The second command
-will restore hello.rb to the version in the HEAD revision, so
+restores hello.rb to the version in the HEAD revision, so
 that both "git diff hello.rb" and "git diff --cached hello.rb"
 return no differences.
 
@@ -76,7 +76,7 @@ correct typos in a commit message, prior to pushing the change
 out for the world to see.
 
 If you find a mistake in an older commit, but still one that you
-have not yet published to the world, you use linkgit:git-rebase[1]
+have not yet published to the world, you can use linkgit:git-rebase[1]
 in interactive mode, with "git rebase -i" marking the change
 that requires correction with **edit**.  This will allow you
 to amend the commit during the rebasing process.

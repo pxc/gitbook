@@ -25,12 +25,14 @@ A common use is to simply run
     
 which will show you changes in the working directory that are not yet 
 staged for the next commit. 
+
 If you want to see what _is_ staged for the next commit, you can run
 
     $ git diff --cached
 
 which will show you the difference between the index and your last commit; 
 what you would be committing if you run "git commit" without the "-a" option.
+
 Lastly, you can run 
 
     $ git diff HEAD

@@ -1,6 +1,6 @@
 ## Submodules ##
 
-Large projects are often composed of smaller, self-contained modules.  For
+Large projects are often composed of smaller self-contained modules.  For
 example, an embedded Linux distribution's source tree would include every
 piece of software in the distribution with some local modifications; a movie
 player might need to build against a specific, known-working version of a
@@ -35,7 +35,7 @@ commit ID, so other developers who clone the containing project
 Partial checkouts of the superproject are possible: you can tell Git to
 clone none, some or all of the submodules.
 
-The linkgit:git-submodule[1] command is available since Git 1.5.3.  Users
+The linkgit:git-submodule[1] command has been available since Git 1.5.3.  Users
 with Git 1.5.2 can look up the submodule commits in the repository and
 manually check them out; earlier versions won't recognize the submodules at
 all.
@@ -159,7 +159,7 @@ then
     $ git push
 
 You have to run `git submodule update` after `git pull` if you want to update
-submodules, too.
+submodules too.
 
 ###Pitfalls with submodules
 

@@ -16,25 +16,25 @@ has been further backported to 1.4.4.5 if you are still on the 1.4 series.
 Version 2 also includes a CRC checksum of each object so compressed data 
 can be copied directly from pack to pack during repacking without 
 undetected data corruption.  Version 2 indexes can also handle packfiles
-larger than 4 Gb.
+larger than 4 GB.
 
 [fig:packfile-index]
 
 In both formats, the fanout table is simply a way to find the offset of a
-particular sha faster within the index file.  The offset/sha1[]
+particular SHA faster within the index file.  The offset/sha1[]
 tables are sorted by sha1[] values (this is to allow binary search of this
 table), and fanout[] table points at the offset/sha1[] table in a specific
 way (so that part of the latter table that covers all hashes that start
-with a given byte can be found to avoid 8 iterations of the binary
+with a given byte can be found to avoid eight iterations of the binary
 search).
 
-In version 1, the offsets and shas are in the same space, where in version two, 
+In version 1 the offsets and SHAs are in the same space, whereas in version two 
 there are seperate tables
-for the shas, crc checksums and offsets.  At the end of both files are 
-checksum shas for both the index file and the packfile it references.
+for the SHAs, CRC checksums and offsets.  At the end of both files are 
+checksum SHAs for both the index file and the packfile it references.
 
 Importantly, packfile indexes are *not* neccesary to extract objects from
-a packfile, they are simply used to *quickly* retrieve individual objects from
+a packfile; they are simply used to *quickly* retrieve individual objects from
 a pack.  The packfile format is used in upload-pack and receieve-pack programs
 (push and fetch protocols) to transfer objects and there is no index used then
 - it can be built after the fact by scanning the packfile.
@@ -42,8 +42,8 @@ a pack.  The packfile format is used in upload-pack and receieve-pack programs
 ### The Packfile Format ###
 
 The packfile itself is a very simple format.  There is a header, a series of
-packed objects (each with it's own header and body) and then a checksum trailer.
-The first four bytes is the string 'PACK', which is sort of used to make sure 
+packed objects (each with its own header and body) and then a checksum trailer.
+The first four bytes is the string 'PACK', which is used to make sure 
 you're getting the start of the packfile correctly.  This is followed by a 4-byte
 packfile version number and then a 4-byte number of entries in that file.  In
 Ruby, you might read the header data like this:
@@ -56,17 +56,17 @@ Ruby, you might read the header data like this:
 	  [sig, ver, entries]
 	end
 
-After that, you get a series of packed objects, in order of thier SHAs
-which each consist of an object header and object contents.  At the end
-of the packfile is a 20-byte SHA1 sum of all the shas (in sorted order) in that
+After that you get a series of packed objects in order of their SHAs, each of
+which consists of an object header and object contents.  At the end
+of the packfile is a 20-byte SHA1 sum of all the SHAs (in sorted order) in that
 packfile. 
 
 [fig:packfile-format]
 
-The object header is a series of one or more 1 byte (8 bit) hunks that
+The object header is a series of one or more 1-byte (8-bit) hunks that
 specify the type of object the following data is, and the size of the data
 when expanded.  Each byte is really 7 bits of data, with the first bit being
-used to say if that hunk is the last one or not before the data starts.  If
+used to say whether that hunk is the last one or not before the data starts.  If
 the first bit is a 1, you will read another byte, otherwise the data starts
 next.  The first 3 bits in the first byte specifies the type of data, 
 according to the table below. 
@@ -87,17 +87,17 @@ expanded*. This is why the offsets in the packfile index are so useful,
 otherwise you have to expand every object just to tell when the next header 
 starts.
 
-The data part is just zlib stream for non-delta object types; for the two
+The data part is just a zlib stream for non-delta object types; for the two
 delta object representations, the data portion contains something that
 identifies which base object this delta representation depends on, and the
 delta to apply on the base object to resurrect this object.  <code>ref-delta</code>
-uses 20-byte hash of the base object at the beginning of data, while
+uses a 20-byte hash of the base object at the beginning of data, while
 <code>ofs-delta</code> stores an offset within the same packfile to identify the base
-object.  In either case, two important constraints a reimplementor must
-adhere to are:
+object.  In either case, there are two important constraints a reimplementor must
+adhere to:
 
 * delta representation must be based on some other object within the same
   packfile;
 
 * the base object must be of the same underlying type (blob, tree, commit
-  or tag);
+  or tag).

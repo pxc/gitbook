@@ -5,9 +5,8 @@ Welcome to Git - the fast, distributed version control system.
 This book is meant to be a starting point for people new to Git to learn it 
 as quickly and easily as possible.
 
-
 This book will start out by introducing you to the way Git stores data, to 
-give you the context for why it is different than other VCS tools.
+give you the context for why it is different from other VCS tools.
 This is meant to take you about 20 minutes.
 
 Next we will cover **Basic Git Usage** - the commands you will be using 90% of 
@@ -21,7 +20,7 @@ section.  This will mostly be tricks and commands that will feel more
 comfortable after you know the basic commands.
 
 After you have all of that mastered, we will cover **Advanced Git** - commands
-that most people probably don't use very often, but can be very helpful in
+that most people probably don't use very often, but which can be very helpful in
 certain situations.  Learning these commands should round out your day-to-day
 git knowledge; you will be a master of the Git!
 

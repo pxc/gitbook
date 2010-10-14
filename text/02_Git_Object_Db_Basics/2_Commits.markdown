@@ -5,9 +5,8 @@ of how we got there and why.
 
 [fig:object-commit]
 
-You can use the --pretty=raw option to
-linkgit:git-show[1] or linkgit:git-log[1] to examine your favorite
-commit:
+You can use the --pretty=raw option to linkgit:git-show[1] or
+linkgit:git-log[1] to examine your favorite commit:
 
     $ git show -s --pretty=raw 2be7fcb476
     commit 2be7fcb4764f2dbcee52635b91fedb1b3dcf7ab4
@@ -45,7 +44,7 @@ of the tree referred to by this commit with the trees associated with
 its parents.  In particular, git does not attempt to record file renames
 explicitly, though it can identify cases where the existence of the same
 file data at changing paths suggests a rename.  (See, for example, the
--M option to linkgit:git-diff[1]).
+-M option to linkgit:git-diff[1].)
 
 A commit is usually created by linkgit:git-commit[1], which creates a
 commit whose parent is normally the current HEAD, and whose tree is
@@ -53,10 +52,10 @@ taken from the content currently stored in the index.
 
 ### The Object Model ###
 
-So, now that we've looked at the 3 main object types (blob, tree and commit), 
-let's take a quick look at how they all fit together.
+So, now that we've looked at the three main object types (blob, tree
+and commit), let's take a quick look at how they all fit together.
 
-If we had a simple project with the following directory structure:
+If you had a simple project with the following directory structure:
 
     $>tree
     .
@@ -68,10 +67,10 @@ If we had a simple project with the following directory structure:
 
     2 directories, 3 files
 
-And we committed this to a Git repository, it would be represented like this:
+and you committed this to a Git repository, it would be represented like this:
 
 [fig:objects-example]
 
-You can see that we have created a **tree** object for each directory (including the root)
-and a **blob** object for each file.  Then we have a **commit** object to point
-to the root, so we can track what our project looked like when it was committed.
+You can see that there is a **tree** object for each directory (including the root)
+and a **blob** object for each file.  Then you have a **commit** object to point
+to the root, so you can track what our project looked like when it was committed.

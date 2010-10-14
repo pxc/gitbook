@@ -1,7 +1,7 @@
 ## Browsing Git Objects ##
 
 We can ask git about particular objects with the cat-file
-command. Note that you can shorten the shas to only a few
+command. Note that you can shorten the SHAs to only a few
 characters to save yourself typing all 40 hex digits:
 
     $ git-cat-file -t 54196cc2
@@ -14,7 +14,7 @@ characters to save yourself typing all 40 hex digits:
     initial commit
 
 A tree can refer to one or more "blob" objects, each corresponding to
-a file.  In addition, a tree can also refer to other tree objects,
+a file.  In addition, a tree can refer to other tree objects,
 thus creating a directory hierarchy.  You can examine the contents of
 any tree using ls-tree (remember that a long enough initial portion
 of the SHA1 will also work):
@@ -57,8 +57,8 @@ directory:
     .git/objects/c4
     .git/objects/c4/d59f390b9cfd4318117afde11d601c1085f241
 
-and the contents of these files is just the compressed data plus a
-header identifying their length and their type.  The type is either a
+and the contents of each of these files is just the compressed data plus a
+header identifying its length and its type.  The type is either a
 blob, a tree, a commit, or a tag.
 
 The simplest commit to find is the HEAD commit, which we can find

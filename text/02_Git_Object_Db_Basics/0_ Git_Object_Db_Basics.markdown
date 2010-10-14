@@ -25,14 +25,14 @@ others:
 
 ### The Objects ###
 
-Every object consists of three things - a **type**, a **size** and **content**.
-The _size_ is simply the size of the contents, the contents depend on what
-type of object it is, and there are four different types of objects: 
-"blob", "tree", "commit", and "tag".
+Every object consists of three things: a **type**, a **size** and some
+**content**.  The _size_ is simply the size of the contents. The
+contents depend on what type of object it is. There are four different
+types of objects: "blob", "tree", "commit", and "tag".
 
 - A **"blob"** is used to store file data - it is generally a file.
 - A **"tree"** is basically like a directory - it references a bunch of
-    other trees and/or blobs (i.e. files and sub-directories)
+    other trees and/or blobs (i.e. files and sub-directories).
 - A **"commit"** points to a single tree, marking it as what the project
     looked like at a certain point in time.  It contains meta-information
     about that point in time, such as a timestamp, the author of the changes
@@ -45,9 +45,9 @@ Almost all of Git is built around manipulating this simple structure of four
 different object types.  It is sort of its own little filesystem that sits
 on top of your machine's filesystem.
 
-### Different from SVN ###
+### Different from Other SCM Systems ###
 
-It is important to note that this is very different from most SCM systems
+It is important to note that Git is very different from most SCM systems
 that you may be familiar with.  Subversion, CVS, Perforce, Mercurial and the
 like all use _Delta Storage_ systems - they store the differences between one
 commit and the next.  Git does not do this - it stores a snapshot of what all

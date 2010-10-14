@@ -1,25 +1,25 @@
 ## Git Treeishes ##
 
 There are a number of ways to refer to a particular commit or tree other
-than spelling out the entire 40-character sha.  In Git, these are referred
+than spelling out the entire 40-character SHA.  In Git, these are referred
 to as a 'treeish'.
 
-### Partial Sha ###
+### Partial SHA ###
 
-If your commit sha is '<code>980e3ccdaac54a0d4de358f3fe5d718027d96aae</code>', git will 
+If your commit SHA is '<code>980e3ccdaac54a0d4de358f3fe5d718027d96aae</code>', git will 
 recognize any of the following identically:
 
 	980e3ccdaac54a0d4de358f3fe5d718027d96aae
 	980e3ccdaac54a0d4
 	980e3cc
 
-As long as the partial sha is unique - it can't be confused with another
+As long as the partial SHA is unique - it can't be confused with another
 (which is incredibly unlikely if you use at least 5 characters), git will
-expand a partial sha for you.
+expand a partial SHA for you.
 
 ### Branch, Remote or Tag Name ###
 
-You can always use a branch, remote or tag name instead of a sha, since they
+You can always use a branch, remote or tag name instead of a SHA, since they
 are simply pointers anyhow.  If your master branch is on the 980e3 commit and
 you've pushed it to origin and have tagged it 'v1.0', then all of the following
 are equivalent:
@@ -48,7 +48,7 @@ such as:
 	master@{1 month ago}
 	
 Which is shorthand for 'where the master branch head was yesterday', etc. Note
-that this format can result in different shas on different computers, even if
+that this format can result in different SHAs on different computers, even if
 the master branch is currently pointing to the same place.
 
 ### Ordinal Spec ###
@@ -60,7 +60,7 @@ For example:
 
 will give you the 5th prior value of the master head ref.
 	
-### Carrot Parent ###
+### Caret Parent ###
 
 This will give you the Nth parent of a particular commit.  This format is only
 useful on merge commits - commit objects that have more than one direct parent.
@@ -88,13 +88,13 @@ You can keep doing this, too.  The following specs will point to the same commit
 ### Tree Pointer ###
 
 This disambiguates a commit from the tree that it points to.  If you want the 
-sha that a commit points to, you can add the '^{tree}' spec to the end of it.
+SHA that a commit points to, you can add the '^{tree}' spec to the end of it.
 
 	master^{tree}
 
 ### Blob Spec ###
 
-If you want the sha of a particular blob, you can add the blob path at the
+If you want the SHA of a particular blob, you can add the blob path at the
 end of the treeish, like so:
 
 	master:/path/to/file

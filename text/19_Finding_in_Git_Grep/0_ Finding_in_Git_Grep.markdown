@@ -5,8 +5,8 @@ linkgit:git-grep[1] command.  It is possible to do this with the normal
 unix 'grep' command, but with 'git grep' you can also search through
 previous versions of the project without having to check them out.
 
-For example, if I wanted to see every place that used the 'xmmap' call in
-my git.git repository, I could run this:
+For example, if you wanted to see every place that used the 'xmmap' call in
+your git.git repository, you could run this:
 
 	$ git grep xmmap
 	config.c:               contents = xmmap(NULL, contents_sz, PROT_READ,
@@ -21,7 +21,7 @@ my git.git repository, I could run this:
 	sha1_file.c:            buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0);
 	wrapper.c:void *xmmap(void *start, size_t length,
 
-If I wanted to see the line number of each match as well, I can add the '-n'
+If you wanted to see the line number of each match as well, you could add the '-n'
 option:
 
 	$>git grep -n xmmap
@@ -37,7 +37,7 @@ option:
 	sha1_file.c:2393:               buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd
 	wrapper.c:89:void *xmmap(void *start, size_t length,
 
-If we're only interested in the filename, we can pass the '--name-only' option:
+If you're only interested in the filename, you can pass the '--name-only' option:
 
 	$>git grep --name-only xmmap
 	config.c
@@ -48,7 +48,7 @@ If we're only interested in the filename, we can pass the '--name-only' option:
 	sha1_file.c
 	wrapper.c
 
-We could also see how many line matches we have in each file with the '-c' 
+You could also see how many line matches you have in each file with the '-c' 
 option:
 
 	$>git grep -c xmmap
@@ -60,7 +60,7 @@ option:
 	sha1_file.c:5
 	wrapper.c:1
 
-Now, if I wanted to see where that was used in a specific version of git, I 
+Now, if you wanted to see where that was used in a specific version of git, you 
 could add the tag reference to the end, like this:
 
 	$ git grep xmmap v1.5.0
@@ -75,18 +75,18 @@ could add the tag reference to the end, like this:
 	v1.5.0:sha1_file.c:     map = xmmap(NULL, st.st_size, PROT_READ, MAP_PRIVATE, fd, 
 	v1.5.0:sha1_file.c:             buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd
 
-We can see that there are some differences between the current lines and these
+You can see that there are some differences between the current lines and these
 lines in version 1.5.0, one of which is that xmmap is now used in wrapper.c where
 it was not back in v1.5.0.
 
-We can also combine search terms in grep.  Say we wanted to search for where
-SORT_DIRENT is defined in our repository:
+You can also combine search terms in grep.  Say you wanted to search for where
+SORT_DIRENT is defined in your repository:
 
 	$ git grep -e '#define' --and -e SORT_DIRENT
 	builtin-fsck.c:#define SORT_DIRENT 0
 	builtin-fsck.c:#define SORT_DIRENT 1
 
-We can also search for every file that has *both* search terms, but display
+You can also search for every file that has *both* search terms, but display
 each line that has *either* of the terms in those files:
 
 	$ git grep --all-match -e '#define' -e SORT_DIRENT
@@ -101,8 +101,8 @@ each line that has *either* of the terms in those files:
 	builtin-fsck.c:#define MAX_SHA1_ENTRIES (1024)
 	builtin-fsck.c: if (SORT_DIRENT)
 
-We can also search for lines that have one term and either of two other terms,
-for example, if we wanted to see where we defined constants that had either
+You can also search for lines that have one term and either of two other terms;
+for example, if you wanted to see where you defined constants that had either
 PATH or MAX in the name:
 
 	$ git grep -e '#define' --and \( -e PATH -e MAX \) 

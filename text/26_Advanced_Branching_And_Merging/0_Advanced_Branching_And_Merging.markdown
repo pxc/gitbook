@@ -33,8 +33,8 @@ these three "file stages" represents a different version of the file:
 When you ask linkgit:git-diff[1] to show the conflicts, it runs a
 three-way diff between the conflicted merge results in the work tree with
 stages 2 and 3 to show only hunks whose contents come from both sides,
-mixed (in other words, when a hunk's merge results come only from stage 2,
-that part is not conflicting and is not shown.  Same for stage 3).
+mixed. (In other words, when a hunk's merge results come only from stage 2,
+that part is not conflicting and is not shown.  The same is true for stage 3).
 
 The diff above shows the differences between the working-tree version of
 file.txt and the stage 2 and stage 3 versions.  So instead of preceding

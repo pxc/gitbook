@@ -14,7 +14,7 @@ linkgit:git-bisect[1] command can help you do this:
 
 If you run "git branch" at this point, you'll see that git has
 temporarily moved you to a new branch named "bisect".  This branch
-points to a commit (with commit id 65934...) that is reachable from
+points to a commit (with commit ID 65934...) that is reachable from
 "master" but not from v2.6.18.  Compile and test it, and see whether
 it crashes.  Assume it does crash.  Then:
 
@@ -27,10 +27,10 @@ stage whether the version it gives you is good or bad, and notice
 that the number of revisions left to test is cut approximately in
 half each time.
 
-After about 13 tests (in this case), it will output the commit id of
+After about 13 tests (in this case), it will output the commit ID of
 the guilty commit.  You can then examine the commit with
 linkgit:git-show[1], find out who wrote it, and mail them your bug
-report with the commit id.  Finally, run
+report with the commit ID.  Finally, run
 
     $ git bisect reset
 
@@ -47,7 +47,7 @@ run
 
 which will run gitk and label the commit it chose with a marker that
 says "bisect".  Choose a safe-looking commit nearby, note its commit
-id, and check it out with:
+ID, and check it out with:
 
     $ git reset --hard fb47ddb2db...
 

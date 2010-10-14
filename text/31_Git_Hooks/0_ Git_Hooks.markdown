@@ -1,6 +1,6 @@
 ## Git Hooks ##
 
-Hooks are little scripts you can place in $GIT_DIR/hooks directory to trigger
+Hooks are little scripts you can place in the $GIT_DIR/hooks directory to trigger
 action at certain points. When git-init is run, a handful example hooks are 
 copied in the hooks directory of the new repository, but by default they are 
 all disabled. To enable a hook, rename it by removing its .sample suffix.
@@ -10,7 +10,7 @@ all disabled. To enable a hook, rename it by removing its .sample suffix.
 
     GIT_DIR/hooks/applypatch-msg
     
-This hook is invoked by git-am script. It takes a single parameter, the name 
+This hook is invoked by git-am script. It takes a single parameter: the name 
 of the file that holds the proposed commit log message. Exiting with non-zero
 status causes git-am to abort before applying the patch.
 
@@ -52,7 +52,7 @@ the outcome of 'git-am'.
     GIT_DIR/hooks/pre-commit
 
 This hook is invoked by 'git-commit', and can be bypassed
-with `\--no-verify` option.  It takes no parameter, and is
+with the `\--no-verify` option.  It takes no parameter, and is
 invoked before obtaining the proposed commit log message and
 making a commit.  Exiting with non-zero status from this script
 causes the 'git-commit' to abort.
@@ -96,34 +96,33 @@ This hook is invoked by 'git-commit' right after preparing the
 default log message, and before the editor is started.
 
 It takes one to three parameters.  The first is the name of the file
-that the commit log message.  The second is the source of the commit
-message, and can be: `message` (if a `-m` or `-F` option was
-given); `template` (if a `-t` option was given or the
-configuration option `commit.template` is set); `merge` (if the
-commit is a merge or a `.git/MERGE_MSG` file exists); `squash`
-(if a `.git/SQUASH_MSG` file exists); or `commit`, followed by
-a commit SHA1 (if a `-c`, `-C` or `\--amend` option was given).
+that contains the commit log message.  The second is the source of the
+commit message, and can be: `message` (if a `-m` or `-F` option was
+given); `template` (if a `-t` option was given or the configuration
+option `commit.template` is set); `merge` (if the commit is a merge or
+a `.git/MERGE_MSG` file exists); `squash` (if a `.git/SQUASH_MSG` file
+exists); or `commit`, followed by a commit SHA1 (if a `-c`, `-C` or
+`\--amend` option was given).
 
 If the exit status is non-zero, 'git-commit' will abort.
 
 The purpose of the hook is to edit the message file in place, and
 it is not suppressed by the `\--no-verify` option.  A non-zero exit
 means a failure of the hook and aborts the commit.  It should not
-be used as replacement for pre-commit hook.
+be used as replacement for a pre-commit hook.
 
-The sample `prepare-commit-msg` hook that comes with git comments
-out the `Conflicts:` part of a merge's commit message.
+The sample `prepare-commit-msg` hook that comes with git comments-out
+the `Conflicts:` part of a merge's commit message.
 
 
 ### commit-msg ###
 
     GIT_DIR/hooks/commit-msg
 
-This hook is invoked by 'git-commit', and can be bypassed
-with `\--no-verify` option.  It takes a single parameter, the
-name of the file that holds the proposed commit log message.
-Exiting with non-zero status causes the 'git-commit' to
-abort.
+This hook is invoked by 'git-commit', and can be bypassed with the
+`\--no-verify` option.  It takes a single parameter, the name of the
+file that holds the proposed commit log message.  Exiting with
+non-zero status causes the 'git-commit' to abort.
 
 The hook is allowed to edit the message file in place, and can
 be used to normalize the message into some project standard
@@ -174,14 +173,14 @@ properties.
     GIT_DIR/hooks/post-merge
 
 This hook is invoked by 'git-merge', which happens when a 'git-pull'
-is done on a local repository.  The hook takes a single parameter, a status
+is done on a local repository.  The hook takes a single parameter: a status
 flag specifying whether or not the merge being done was a squash merge.
-This hook cannot affect the outcome of 'git-merge' and is not executed,
+This hook cannot affect the outcome of 'git-merge' and is not executed
 if the merge failed due to conflicts.
 
 This hook can be used in conjunction with a corresponding pre-commit hook to
 save and restore any form of metadata associated with the working tree
-(eg: permissions/ownership, ACLS, etc).  See contrib/hooks/setgitperms.perl
+(e.g.: permissions/ownership, ACLS, etc.).  See contrib/hooks/setgitperms.perl
 for an example of how to do this.
 
 
@@ -258,12 +257,12 @@ from updating that ref.
 
 This hook can be used to prevent 'forced' update on certain refs by
 making sure that the object name is a commit object that is a
-descendant of the commit object named by the old object name.
-That is, to enforce a "fast forward only" policy.
+descendant of the commit object named by the old object name;
+that is, to enforce a "fast forward only" policy.
 
 It could also be used to log the old..new status.  However, it
 does not know the entire set of branches, so it would end up
-firing one e-mail per ref when used naively, though.  The
+firing one e-mail per ref when used naively.  The
 <<post-receive,'post-receive'>> hook is more suited to that.
 
 Another use suggested on the mailing list is to use this hook to
@@ -334,7 +333,7 @@ them.
 
 When enabled, the default 'post-update' hook runs
 'git-update-server-info' to keep the information used by dumb
-transports (e.g., HTTP) up-to-date.  If you are publishing
+transports (e.g., HTTP) up to date.  If you are publishing
 a git repository that is accessible via HTTP, you should
 probably enable this hook.
 

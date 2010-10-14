@@ -17,12 +17,12 @@ to the 'branch' command in Git.
 
 	git branch --track experimental origin/experimental
 
-Then when you run:
+Then when you run
 
 	$ git pull experimental
 	
-It will automatically fetch from 'origin' and merge 'origin/experimental' 
+it will automatically fetch from 'origin' and merge 'origin/experimental' 
 into your local 'experimental' branch.
 
 Likewise, when you push to origin, it will push what your 'experimental' points to
-to origins 'experimental', without having to specify it.
+to origin's 'experimental', without having to specify it.

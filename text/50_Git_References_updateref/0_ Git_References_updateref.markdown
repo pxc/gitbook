@@ -10,12 +10,12 @@ shorthand:
 	- "origin/master" is short for "refs/remotes/origin/master".
 
 The full name is occasionally useful if, for example, there ever
-exists a tag and a branch with the same name.
+exist a tag and a branch with the same name.
 
 (Newly created refs are actually stored in the .git/refs directory,
 under the path given by their name.  However, for efficiency reasons
 they may also be packed together in a single file; see
-linkgit:git-pack-refs[1]).
+linkgit:git-pack-refs[1].)
 
 As another useful shortcut, the "HEAD" of a repository can be referred
 to just using the name of that repository.  So, for example, "origin"

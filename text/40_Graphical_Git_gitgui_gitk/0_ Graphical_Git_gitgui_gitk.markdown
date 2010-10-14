@@ -1,7 +1,7 @@
 ## Graphical Git ##
 
-Git has a couple of fairly popular Graphial User Interfaces that can
-read and/or maniplulate Git repositories. 
+Git has a couple of fairly popular Graphical User Interfaces that can
+read and/or manipulate Git repositories. 
 
 ### Bundled GUIs ###
 
@@ -12,7 +12,7 @@ repository browser and commit history visualization tool.
 
 linkgit:git-gui[1] is a tool that helps you visualize the index operations,
 like add, remove and commit.  It won't do everything you can do on the 
-command line, but for many of the basic operations, it's pretty good.
+command line, but for many of the basic operations it's pretty good.
 
 [git gui](http://www.kernel.org/pub/software/scm/git/docs/git-gui.html)
  

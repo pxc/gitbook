@@ -14,7 +14,6 @@ project, possessing its own copy of the original project's history.
 
 Bob then makes some changes and commits them:
 
-
     (edit files)
     $ git commit -a
     (repeat as necessary)
@@ -34,10 +33,9 @@ is the default.)
 The "pull" command thus performs two operations: it fetches changes
 from a remote branch, then merges them into the current branch.
 
-When you are working in a small closely knit group, it is not
-unusual to interact with the same repository over and over
-again.  By defining 'remote' repository shorthand, you can make
-it easier:
+When you are working in a small closely knit group, it is not unusual
+to interact with the same repository over and over again.  By defining
+a 'remote' repository shorthand, you can make it easier:
 
     $ git remote add bob /home/bob/myrepo
 
@@ -57,8 +55,8 @@ fetched is stored in a remote tracking branch, in this case
 shows a list of all the changes that Bob made since he branched from
 Alice's master branch.
 
-After examining those changes, Alice
-could merge the changes into her master branch:
+After examining those changes, Alice could merge the changes into her
+master branch:
 
     $ git merge bob/master
 
@@ -93,11 +91,11 @@ name "origin/master":
       origin/master
 
 If Bob later decides to work from a different host, he can still
-perform clones and pulls using the ssh protocol:
+perform clones and pulls using the SSH protocol:
 
     $ git clone alice.org:/home/alice/project myrepo
 
-Alternatively, git has a native protocol, or can use rsync or http;
+Alternatively, git has a native protocol, or can use rsync or HTTP;
 see linkgit:git-pull[1] for details.
 
 Git can also be used in a CVS-like mode, with a central repository
@@ -109,9 +107,8 @@ linkgit:gitcvs-migration[1].
 
 Another way to submit changes to a project is to tell the maintainer
 of that project to pull the changes from your repository using
-linkgit:git-pull[1].  This is a way to get
-updates from the "main" repository, but it works just as well in the
-other direction.
+linkgit:git-pull[1].  This is a way to get updates from the "main"
+repository, but it works just as well in the other direction.
 
 If you and the maintainer both have accounts on the same machine, then
 you can just pull changes from each other's repositories directly;
@@ -121,7 +118,7 @@ local directory name:
     $ git clone /path/to/repository
     $ git pull /path/to/other/repository
 
-or an ssh URL:
+or an SSH URL:
 
     $ git clone ssh://yourhost/~you/repository
 
@@ -147,19 +144,19 @@ like this:
     	| you pull                            | they pull
     	|                                     |
     	|                                     |
-            |               they push             V
+    	|               they push             V
       their public repo <------------------- their repo
       
 
 
 ### Pushing changes to a public repository ###
 
-Note that exporting via http or git allow other
-maintainers to fetch your latest changes, but they do not allow write
-access.  For this, you will need to update the public repository with the
-latest changes created in your private repository.
+Note that exporting via HTTP or git allows other maintainers to fetch
+your latest changes, but does not allow write access.  For this, you
+will need to update the public repository with the latest changes
+created in your private repository.
 
-The simplest way to do this is using linkgit:git-push[1] and ssh; to
+The simplest way to do this is using linkgit:git-push[1] and SSH; to
 update the remote branch named "master" with the latest state of your
 branch named "master", run
 
@@ -170,13 +167,14 @@ or just
     $ git push ssh://yourserver.com/~you/proj.git master
 
 As with git-fetch, git-push will complain if this does not result in a
-fast forward; see the following section for details on
-handling this case.
+fast forward; see the following section for details on handling this
+case.
 
-Note that the target of a "push" is normally a bare repository.  You can also push to a
-repository that has a checked-out working tree, but the working tree
-will not be updated by the push.  This may lead to unexpected results if
-the branch you push to is the currently checked-out branch!
+Note that the target of a "push" is normally a bare repository.  You
+can also push to a repository that has a checked-out working tree, but
+the working tree will not be updated by the push.  This may lead to
+unexpected results if the branch you push to is the currently
+checked-out branch!
 
 As with git-fetch, you may also set up configuration options to
 save typing; so, for example, after
@@ -196,8 +194,8 @@ details.
 
 ### What to do when a push fails ###
 
-If a push would not result in a fast forward of the
-remote branch, then it will fail with an error like:
+If a push would not result in a fast forward of the remote branch,
+then it will fail with an error like:
 
     error: remote 'refs/heads/master' is not an ancestor of
     local  'refs/heads/master'.
@@ -224,10 +222,10 @@ way to publish a work-in-progress patch series, and it is an acceptable
 compromise as long as you warn other developers that this is how you
 intend to manage the branch.
 
-It's also possible for a push to fail in this way when other people have
-the right to push to the same repository.  In that case, the correct
-solution is to retry the push after first updating your work: either by a
-pull, or by a fetch followed by a rebase; see the next section and
-linkgit:gitcvs-migration[7] for more.
+It's also possible for a push to fail in this way when other people
+have the right to push to the same repository.  In that case, the
+correct solution is to retry the push after first updating your work,
+either by a pull, or by a fetch followed by a rebase. See the next
+section and linkgit:gitcvs-migration[7] for more.
 
 [gitcast:c8-dist-workflow]("GitCast #8: Distributed Workflow")

@@ -17,13 +17,13 @@ you all the modified files you have and their status.
 	  5: patch	  6: diff	  7: quit	  8: help
 	What now> 
 
-In this case, we can see that there are 5 modified files that have not been
-added to our index yet (unstaged), and even how many lines have been added to
-or removed from each.  It then shows us an interactive menu of what we can
-do in this mode.
+In this case, you can see that there are five modified files that have
+not been added to your index yet (unstaged), and even how many lines
+have been added to or removed from each.  It then shows you an
+interactive menu of what you can do in this mode.
 
-If we want to stage the files, we can type '2' or 'u' for the update mode. 
-Then I can specify which files I want to stage (add to the index) by typing
+If you want to stage the files, you can type '2' or 'u' for the update mode. 
+Then you can specify which files you want to stage (add to the index) by typing
 in the numbers of the files (in this case, 1-4)
 
 	What now> 2
@@ -42,8 +42,8 @@ in the numbers of the files (in this case, 1-4)
 	  5:    unchanged      +121/-0 text/14_Interactive_Rebasing/0_ Interactive_Rebasing.markdown
 	Update>> 
 
-If I hit enter, I will be taken back to the main menu where I can see that
-the file status has changed:
+If you hit Enter, you will be taken back to the main menu where you
+can see that the file status has changed:
 
 	What now> status
 	           staged     unstaged path
@@ -53,9 +53,9 @@ the file status has changed:
 	  4:        +3/-3      nothing script/pdf.rb
 	  5:    unchanged      +121/-0 text/14_Interactive_Rebasing/0_ Interactive_Rebasing.markdown
 
-Now we can see the first four files are staged and the last one is still not.
-This is basically a compressed way to see the same information we see when
-we run 'git status' from the command line:
+Now you can see the first four files are staged and the last one is still not.
+This is basically a compressed way to see the same information you see when
+you run 'git status' from the command line:
 
 	$ git status
 	# On branch master
@@ -73,7 +73,7 @@ we run 'git status' from the command line:
 	#	modified:   text/14_Interactive_Rebasing/0_ Interactive_Rebasing.markdown
 	#
 
-There are a number of useful things we can do, including unstaging files (3: revert),
+There are a number of useful things you can do, including unstaging files (3: revert),
 adding untracked files (4: add untracked), and viewing diffs (6: diff). Those
 are all pretty straightforward.  However, there is one command that is pretty
 cool here, which is staging patches (5: patch).
@@ -81,8 +81,8 @@ cool here, which is staging patches (5: patch).
 If you type '5' or 'p' in the menu, git will show you your diff patch by patch 
 (or hunk by hunk) and ask if you want to stage each one.  That way you can 
 actually stage for a commit a part of a file edit.  If you've edited a file
-and want to only commit part of it and not an unfinished part, or commit 
-documentation or whitespace changes seperate from substantive changes, you can
+and want to commit only part of it and not an unfinished part, or commit 
+documentation or whitespace changes separately from substantive changes, you can
 use 'git add -i' to do so relatively easily.
 
 Here I've staged some changes to the book_index_template.html file, but not all

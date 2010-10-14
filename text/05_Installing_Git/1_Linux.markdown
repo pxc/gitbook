@@ -5,6 +5,8 @@ package management system:
 
     $ yum install git-core
 
+or
+
     $ apt-get install git-core
 
 If that doesn't work, you can download the .deb or .rpm packages from here:

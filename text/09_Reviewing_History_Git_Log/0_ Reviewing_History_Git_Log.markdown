@@ -142,13 +142,13 @@ It will give a pretty nice ASCII representation of the commit history lines.
 ### Ordering the Log ###
 
 You can also view the log entries in a few different orders. 
-Note that git log starts with the most recent commit and works
+Note that 'git log' starts with the most recent commit and works
 backwards through the parents; however, since git history can contain
 multiple independent lines of development, the particular order that
 commits are listed in may be somewhat arbitrary.
 
 If you want to specify a certain order, you can add an ordering option
-to the git log command.
+to the 'git log' command.
 
 By default, the commits are shown in reverse chronological order.
 
@@ -186,11 +186,12 @@ development lines are all grouped together.
 	| | | * | 0a7d387 : Removed debug print.
 	| | | * | 4d6b69c : Fixed to close opened file description.
 
-You can also use '--date-order', which orders the commits primarily by commit date.
-This option is similar to --topo-order in the sense that no parent comes before all of its children, 
-but otherwise things are still ordered in the commit timestamp order. You can
-see that development lines are not grouped together here, that they jump around
-as parallel development occurred:
+You can also use '--date-order', which orders the commits primarily by
+commit date.  This option is similar to --topo-order in the sense that
+no parent comes before all of its children, but otherwise things are
+still ordered in the commit timestamp order. You can see that
+development lines are not grouped together here: they jump around as
+parallel development occurred:
 
 	$ git log --pretty=format:'%h : %s' --date-order --graph
 	*   4a904d7 : Merge branch 'idx2'
@@ -221,8 +222,6 @@ as parallel development occurred:
 	| * | | a0e4a3d : updated grit gemspec
 	| * | | 7569d0d : including code from github updates
 
-
 Lastly, you can reverse the order of the log with the '--reverse' option.
-
 
 [gitcast:c4-git-log]("GitCast #4: Git Log")

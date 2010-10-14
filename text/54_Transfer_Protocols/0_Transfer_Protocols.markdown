@@ -13,7 +13,7 @@ git directory you are fetching from is in the webserver path.
 In order for this to work, you do need to run a single command on the 
 server repo everytime anything is updated, though - linkgit:git-update-server-info[0],
 which updates the objects/info/packs and info/refs files to list which refs
-and packfiles are available, since you can't do a listing over http.  When
+and packfiles are available, since you can't do a listing over HTTP.  When
 that command is run, the objects/info/packs file looks something like this:
 
 	P pack-ce2bd34abc3d8ebc5922dc81b2e1f30bf17c10cc.pack
@@ -91,7 +91,7 @@ each time or there will be confusion.
 ### Fetching Data with Upload Pack ###
 
 For the smarter protocols, fetching objects is much more efficient.  A socket
-is opened, either over ssh or over port 9418 (in the case of the git:// protocol),
+is opened, either over SSH or over port 9418 (in the case of the git:// protocol),
 and the linkgit:git-fetch-pack[1] command on the client begins communicating with
 a forked linkgit:git-upload-pack[1] process on the server.
 
@@ -112,7 +112,7 @@ produces the following request:
 
 	0032git-upload-pack /project.git\\000host=myserver.com\\000
 
-The first four bytes contain the hex length of the line (including 4 byte line
+The first four bytes contain the hex length of the line (including four-byte line
 length and trailing newline if present). Following are the command and
 arguments. This is followed by a null byte and then the host information. The
 request is terminated by a null byte.
@@ -130,7 +130,7 @@ This immediately returns information of the repo:
 	003f74730d410fcb6603ace96f1dc55ea6196122532d refs/heads/master
 	0000
 
-Each line starts with a four byte line length declaration in hex. The section
+Each line starts with a four-byte line length declaration in hex. The section
 is terminated by a line length declaration of 0000.
 
 This is sent back to the client verbatim. The client responds with another
@@ -143,7 +143,7 @@ request:
 	0032want 74730d410fcb6603ace96f1dc55ea6196122532d
 	00000009done
 
-The is sent to the open git-upload-pack process which then streams out the 
+This is sent to the open git-upload-pack process which then streams out the 
 final response:
 
 	"0008NAK\n"
@@ -172,12 +172,12 @@ in the response.
 
 Pushing data over the git and ssh protocols is similar, but simpler.  Basically
 what happens is the client requests a receive-pack instance, which is started
-up if the client has access, then the server returns all the ref head shas it
+up if the client has access, then the server returns all the ref head SHAs it
 has again and the client generates a packfile of everything the server needs
 (generally only if what is on the server is a direct ancestor of what it is
 pushing) and sends that packfile upstream, where the server either stores it
 on disk and builds an index for it, or unpacks it (if there aren't many objects
-in it)
+in it).
 
 This entire process is accomplished through the linkgit:git-send-pack[1] command
 on the client, which is invoked by linkgit:git-push[1] and the 

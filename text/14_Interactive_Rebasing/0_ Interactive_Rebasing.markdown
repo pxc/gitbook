@@ -1,8 +1,8 @@
 ## Interactive Rebasing ##
 
-You can also rebase interactively.  This is often used to re-write your
-own commit objects before pusing them somewhere.  It is an easy way to 
-split, merge or re-order commits before sharing them with others.  You
+You can also rebase interactively.  This is often used to rewrite your
+own commit objects before pushing them somewhere.  It is an easy way to 
+split, merge or reorder commits before sharing them with others.  You
 can also use it to clean up commits you've pulled from someone when
 applying them locally.
 
@@ -39,8 +39,8 @@ of choice with something that looks like this:
 	# However, if you remove everything, the rebase will be aborted.
 	#
 
-This means that there are 5 commits since you last pushed and it gives you 
-one line per commit with the following format:
+This means that there are five commits since you last pushed and it
+gives you one line per commit with the following format:
 
 	(action) (partial-sha) (short commit message)
 	
@@ -50,10 +50,10 @@ just by moving the lines around however you want.  Then, when you exit the
 editor, git will try to apply the commits however they are now arranged and
 do the action specified. 
 
-If 'pick' is specified, it will simply try to apply the patch and save the 
+If 'pick' is specified, Git will simply try to apply the patch and save the 
 commit with the same message as before.
 
-If 'squash' is specified, it will combine that commit with the previous one
+If 'squash' is specified, Git will combine that commit with the previous one
 to create a new commit.  This will drop you into your editor again to merge
 the commit messages of the two commits it is now squashing together.  So, 
 if you exit the editor with this:
@@ -64,7 +64,7 @@ if you exit the editor with this:
 	squash 76b9da6 added the apply command
 	squash c264051 Revert "added file_size" - not implemented correctly
 
-Then you will have to create a single commit message from this:
+then you will have to create a single commit message from this:
 
 	# This is a combination of 5 commits.
 	# The first commit's message is:
@@ -88,10 +88,10 @@ Then you will have to create a single commit message from this:
 
 	This reverts commit fc62e5543b195f18391886b9f663d5a7eca38e84.
 
-Once you have edited that down into once commit message and exit the editor,
+Once you have edited that down into one commit message and exited the editor,
 the commit will be saved with your new message.
 
-If 'edit' is specified, it will do the same thing, but then pause before 
+If 'edit' is specified, Git will do the same thing, but then pause before 
 moving on to the next one and drop you into the command line so you can 
 amend the commit, or change the commit contents somehow.
 
@@ -105,9 +105,9 @@ that commit:
 	pick   c264051 Revert "added file_size" - not implemented correctly
 
 And then when you get to the command line, you revert that commit and create
-two (or more) new ones.  Lets say 21d80a5 modified two files, file1 and file2,
-and you wanted to split them into seperate commits.  You could do this after
-the rebase dropped you to the command line :
+two (or more) new ones.  Let's say 21d80a5 modified two files, file1 and file2,
+and you wanted to split them into separate commits.  You could do this after
+the rebase dropped you to the command line:
 
 	$ git reset HEAD^
 	$ git add file1
@@ -116,8 +116,8 @@ the rebase dropped you to the command line :
 	$ git commit 'second part of split commit'
 	$ git rebase --continue
 	
-And now instead of 5 commits, you would have 6.
+And now instead of five commits, you would have six.
 
 The last useful thing that interactive rebase can do is drop commits for you.
 If instead of choosing 'pick', 'squash' or 'edit' for the commit line, you 
-simply remove the line, it will remove the commit from the history.
+simply remove the line, Git will remove the commit from the history.
